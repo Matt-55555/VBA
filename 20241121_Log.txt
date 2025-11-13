@@ -1,0 +1,159 @@
+Step 001|21/11/2024 12:54:58||Main|Début d'exécution du programme :
+blablablibli
+Step 001|21/11/2024 12:55:33||Main|Début d'exécution du programme :
+Step 001|21/11/2024 12:56:49||Main|Début d'exécution du programme :
+Step 002|21/11/2024 12:56:49||InitialisationGlobales|Début d'exécution de la procédure "InitialisationGlobales" :
+Step 003|21/11/2024 12:56:49||MOD_TRANS_XL_GETPARAM_FROM_TABLE|Récupération du paramètre dans un tableau(ARG: strParamName As String = Prm_FichierTravail, SheetName As String = PARAM, tblParamName As String = tbl_PARAM_APPLI, Optional TblColumnForRead As Integer = 2)|VR = C:\Users\CHARREJ\Desktop\#361\2 - Fichiers sources\361-Génération écarts IG\1. Production\2. Etat des écarts\Masterfile - IG v10.8.xlsm
+Step 004|21/11/2024 12:56:49||MOD_TRANS_XL_GETPARAM_FROM_TABLE|Récupération du paramètre dans un tableau(ARG: strParamName As String = Prm_FichierGo, SheetName As String = PARAM, tblParamName As String = tbl_PARAM_APPLI, Optional TblColumnForRead As Integer = 2)|VR = C:\Users\CHARREJ\Desktop\#361\4 - Programme - Livraison\Go.txt
+Step 005|21/11/2024 12:56:49||MOD_TRANS_XL_GETPARAM_FROM_TABLE|Récupération du paramètre dans un tableau(ARG: strParamName As String = Prm_FichierRapport, SheetName As String = PARAM, tblParamName As String = tbl_PARAM_APPLI, Optional TblColumnForRead As Integer = 2)|VR = C:\Users\CHARREJ\Desktop\#361\4 - Programme - Livraison\Rapport.txt
+Step 006|21/11/2024 12:56:49||MOD_TRANS_XL_GETPARAM_FROM_TABLE|Récupération du paramètre dans un tableau(ARG: strParamName As String = Prm_FichierTravail_OngletsRequis, SheetName As String = PARAM, tblParamName As String = tbl_PARAM_APPLI, Optional TblColumnForRead As Integer = 2)|VR = Déclarants;Central
+Step 007|21/11/2024 12:56:49||MOD_TRANS_XL_GETPARAM_FROM_TABLE|Récupération du paramètre dans un tableau(ARG: strParamName As String = Prm_FichierTravail_OngletDéclarants_TableauxStructurésRequis, SheetName As String = PARAM, tblParamName As String = tbl_PARAM_APPLI, Optional TblColumnForRead As Integer = 2)|VR = Déclarants_IG
+Step 008|21/11/2024 12:56:49||MOD_TRANS_XL_GETPARAM_FROM_TABLE|Récupération du paramètre dans un tableau(ARG: strParamName As String = Prm_FichierTravail_OngletImports2_TableauxStructurésRequis, SheetName As String = PARAM, tblParamName As String = tbl_PARAM_APPLI, Optional TblColumnForRead As Integer = 2)|VR = Imports
+Step 009|21/11/2024 12:56:49||MOD_TRANS_XL_GETPARAM_FROM_TABLE|Récupération du paramètre dans un tableau(ARG: strParamName As String = Prm_FichierTravail_OngletFinal_TableauxStructurésRequis, SheetName As String = PARAM, tblParamName As String = tbl_PARAM_APPLI, Optional TblColumnForRead As Integer = 2)|VR = Final
+Step 010|21/11/2024 12:56:49||MOD_TRANS_XL_GETPARAM_FROM_TABLE|Récupération du paramètre dans un tableau(ARG: strParamName As String = Prm_FichierTravail_OngletRéponses_TableauxStructurésRequis, SheetName As String = PARAM, tblParamName As String = tbl_PARAM_APPLI, Optional TblColumnForRead As Integer = 2)|VR = Réponses
+Step 011|21/11/2024 12:56:49||MOD_TRANS_XL_GETPARAM_FROM_TABLE|Récupération du paramètre dans un tableau(ARG: strParamName As String = Prm_FichierTravail_OngletCentral_PlagesNomméesRequises, SheetName As String = PARAM, tblParamName As String = tbl_PARAM_APPLI, Optional TblColumnForRead As Integer = 2)|VR = Prm_Tables;Prm_Temp2;Prm_Temp3;Prm_Destination;Prm_ModeleDestination
+Step 012|21/11/2024 12:56:49||MOD_TRANS_XL_GETPARAM_FROM_TABLE|Récupération du paramètre dans un tableau(ARG: strParamName As String = Prm_FichierTravail_OngletCentral_Valeur_PlagesNomméesRequises, SheetName As String = PARAM, tblParamName As String = tbl_PARAM_APPLI, Optional TblColumnForRead As Integer = 2)|VR = Prm_Tables;Prm_Temp2;Prm_Temp3
+Step 013|21/11/2024 12:56:49||MOD_TRANS_XL_GETPARAM_FROM_TABLE|Récupération du paramètre dans un tableau(ARG: strParamName As String = Prm_Tables_FichiersRequis, SheetName As String = PARAM, tblParamName As String = tbl_PARAM_APPLI, Optional TblColumnForRead As Integer = 2)|VR = Index.xlsx;Périmètre.xlsx;Plans.xlsx
+Step 014|21/11/2024 12:56:49||MOD_TRANS_XL_GETPARAM_FROM_TABLE|Récupération du paramètre dans un tableau(ARG: strParamName As String = Prm_Temp2_FichiersRequis, SheetName As String = PARAM, tblParamName As String = tbl_PARAM_APPLI, Optional TblColumnForRead As Integer = 2)|VR = *.xlsm
+Step 015|21/11/2024 12:56:49||InitialisationGlobales|  --> Initialisation des KPIs effectuée.
+Step 016|21/11/2024 12:56:49||InitialisationGlobales|Fin d'exécution de la procédure "InitialisationGlobales".
+Step 017|21/11/2024 12:56:49||CREATE_RAPPORT|Début d'exécution de la procédure "CREATE_RAPPORT" :
+Step 018|21/11/2024 12:56:49||CREATE_RAPPORT|  --> Suppression du fichier "Rapport.txt" existant et création d'un nouveau.
+Step 019|21/11/2024 12:56:49||CREATE_RAPPORT|  --> Création du Fichier "Rapport.txt".
+Step 020|21/11/2024 12:56:49||CREATE_RAPPORT|Fin d'exécution de la procédure "CREATE_RAPPORT".
+Step 021|21/11/2024 12:56:49||VérificationsPréalables|Vérification de l'existence du Classeur "Masterfile".
+Step 022|21/11/2024 12:56:57||VérificationsPréalables|   --> Vérification réussie.
+Step 023|21/11/2024 12:56:57||VérificationsPréalables|Vérification de l'existence du fichier "Go".
+Step 024|21/11/2024 12:56:57||VérificationsPréalables|   --> Vérification réussie.
+Step 025|21/11/2024 12:56:57||VérificationsPréalables|Vérification de l'existence du fichier "Rapport".
+Step 026|21/11/2024 12:56:57||VérificationsPréalables|   --> Vérification réussie.
+Step 027|21/11/2024 12:56:57||VérificationsPréalables|Vérification de l'existence du/des Onglet(s) "Déclarants" et "Central" - (renseigné(s) dans le paramètre "Prm_FichierTravail_OngletsRequis" de l'onglet "Param").
+Step 028|21/11/2024 12:56:57||VérificationsPréalables|   --> Vérification réussie.
+Step 029|21/11/2024 12:56:57||VérificationsPréalables|Vérification de l'existence du/des Tableau(x) Structuré(s) "Déclarants_IG" dans l'onglet "Déclarants" - (renseigné(s) dans le paramètre "Prm_FichierTravail_OngletDéclarants_TableauxStructurésRequis" de l'onglet "Param").
+Step 030|21/11/2024 12:56:57||VérificationsPréalables|   --> Vérification réussie.
+Step 031|21/11/2024 12:56:57||VérificationsPréalables|Vérification de l'existence du/des Tableau(x) Structuré(s) "Imports" dans l'onglet "Imports2" - (renseigné(s) dans le paramètre "Prm_FichierTravail_OngletImports2_TableauxStructurésRequis" de l'onglet "Param").
+Step 032|21/11/2024 12:56:57||VérificationsPréalables|   --> Vérification réussie.
+Step 033|21/11/2024 12:56:57||VérificationsPréalables|Vérification de l'existence du/des Tableau(x) Structuré(s) "Final" dans l'onglet "Final" - (renseigné(s) dans le paramètre "Prm_FichierTravail_OngletFinal_TableauxStructurésRequis" de l'onglet "Param").
+Step 034|21/11/2024 12:56:57||VérificationsPréalables|   --> Vérification réussie.
+Step 035|21/11/2024 12:56:57||VérificationsPréalables|Vérification de l'existence du/des Tableau(x) Structuré(s) "Réponses" dans l'onglet "Réponses" - (renseigné(s) dans le paramètre "Prm_FichierTravail_OngletRéponses_TableauxStructurésRequis" de l'onglet "Param").
+Step 036|21/11/2024 12:56:57||VérificationsPréalables|   --> Vérification réussie.
+Step 037|21/11/2024 12:56:57||VérificationsPréalables|Vérification de l'existence du/des Plage(s) Nommée(s) "Prm_Tables", "Prm_Temp2", "Prm_Temp3", "Prm_Destination", et "Prm_ModeleDestination" dans l'onglet "Central" - (renseignée(s) dans le paramètre "Prm_FichierTravail_OngletCentral_PlagesNomméesRequises" de l'onglet "Param").
+Step 038|21/11/2024 12:56:57||VérificationsPréalables|   --> Vérification réussie.
+Step 039|21/11/2024 12:56:57||VérificationsPréalables|Vérification de l'existence du/des répertoire(s) renseigné(s) dans les Plages Nommées "Prm_Tables", "Prm_Temp2", et "Prm_Temp3" dans l'onglet "Central" - (liste des Plages Nommées comportant les chemins des répertoires à vérifier renseignée dans le paramètre "Prm_FichierTravail_OngletCentral_Valeur_PlagesNomméesRequises" de l'onglet "Param").
+Step 040|21/11/2024 12:56:57||VérificationsPréalables|   --> Vérification réussie.
+Step 041|21/11/2024 12:56:57||VérificationsPréalables|Initialisation des variables "Prm_Tables", "Prm_Temp2", "Prm_Temp3", et "Prm_Destination".
+Step 042|21/11/2024 12:56:57||VérificationsPréalables|   --> Initialisation réussie.
+Step 043|21/11/2024 12:56:57||VérificationsPréalables|Vérification de l'existence du/des Fichiers "Index.xlsx", "Périmètre.xlsx", et "Plans.xlsx" - (renseigné(s) dans le paramètre "Prm_Tables_FichiersRequis" de l'onglet "Param").
+Step 044|21/11/2024 12:56:57||VérificationsPréalables|   --> Vérification réussie.
+Step 045|21/11/2024 12:56:57||VérificationsPréalables|Vérification de l'existence d'au moins un fichier ayant une extension ".xlsm" dans le répertoire indiqué dans la Plage Nommée "Prm_Temp2".
+Step 046|21/11/2024 12:56:57||VérificationsPréalables|   --> Vérification réussie.
+Step 047|21/11/2024 12:56:57||ErrorManagment\ERROR :VérificationsPréalables => Trop de fichiers
+Step 048|21/11/2024 12:56:57||End_Clean_OnError|Début d'exécution de la procédure "End_Clean_OnError" :
+Step 049|21/11/2024 12:56:58|ENVOI DES KPI|KPI| => Envoi du KPI = 
+{"Code Process" : "361","Sous code Process" : "361-2","Nom du process" : "GTVA Generation des ecarts IG","Direction" : "DFI","Département" : "GTVA","Jour/homme passé" : "0","Technologie" : "VBA","Statut" : "KO","Date / heure début" : "2024-11-21T12:56:49Z","Date / heure fin" : "2024-11-21T12:56:57Z","Nombre occurences lues" : "0","Nombre occurences traitées" : "0","Nombre occurences rejetées" : "0","Nb clics / actions" : "49","Environnement" : "Production"}
+Step 050|21/11/2024 12:56:59|ENVOI DES KPI|UPDATE_RAPPORT|UPDATE Fichier Rapport.txt: => Fin inattendue du process VBA, merci de consulter le LOG.
+Step 051|21/11/2024 12:56:59|ENVOI DES KPI|End_Clean_OnError|Fin d'exécution de la procédure "End_Clean_OnError".
+Step 052|21/11/2024 12:56:59|ENVOI DES KPI|End_Clean_OnError|Temps d'exécution du programme : 0h 0mn 10sec.
+Step 053|21/11/2024 12:56:59|ENVOI DES KPI|End_Clean_OnError|Exécution partielle du programme. Fin du programme. 
+Step 054|21/11/2024 12:56:59|ENVOI DES KPI|UPDATE_FILE_GO|UPDATE Fichier GO.txt => KO
+Step 001|21/11/2024 12:58:05||Main|Début d'exécution du programme :
+Step 002|21/11/2024 12:58:05||InitialisationGlobales|Début d'exécution de la procédure "InitialisationGlobales" :
+Step 003|21/11/2024 12:58:05||MOD_TRANS_XL_GETPARAM_FROM_TABLE|Récupération du paramètre dans un tableau(ARG: strParamName As String = Prm_FichierTravail, SheetName As String = PARAM, tblParamName As String = tbl_PARAM_APPLI, Optional TblColumnForRead As Integer = 2)|VR = C:\Users\CHARREJ\Desktop\#361\2 - Fichiers sources\361-Génération écarts IG\1. Production\2. Etat des écarts\Masterfile - IG v10.8.xlsm
+Step 004|21/11/2024 12:58:05||MOD_TRANS_XL_GETPARAM_FROM_TABLE|Récupération du paramètre dans un tableau(ARG: strParamName As String = Prm_FichierGo, SheetName As String = PARAM, tblParamName As String = tbl_PARAM_APPLI, Optional TblColumnForRead As Integer = 2)|VR = C:\Users\CHARREJ\Desktop\#361\4 - Programme - Livraison\Go.txt
+Step 005|21/11/2024 12:58:05||MOD_TRANS_XL_GETPARAM_FROM_TABLE|Récupération du paramètre dans un tableau(ARG: strParamName As String = Prm_FichierRapport, SheetName As String = PARAM, tblParamName As String = tbl_PARAM_APPLI, Optional TblColumnForRead As Integer = 2)|VR = C:\Users\CHARREJ\Desktop\#361\4 - Programme - Livraison\Rapport.txt
+Step 006|21/11/2024 12:58:05||MOD_TRANS_XL_GETPARAM_FROM_TABLE|Récupération du paramètre dans un tableau(ARG: strParamName As String = Prm_FichierTravail_OngletsRequis, SheetName As String = PARAM, tblParamName As String = tbl_PARAM_APPLI, Optional TblColumnForRead As Integer = 2)|VR = Déclarants;Central
+Step 007|21/11/2024 12:58:05||MOD_TRANS_XL_GETPARAM_FROM_TABLE|Récupération du paramètre dans un tableau(ARG: strParamName As String = Prm_FichierTravail_OngletDéclarants_TableauxStructurésRequis, SheetName As String = PARAM, tblParamName As String = tbl_PARAM_APPLI, Optional TblColumnForRead As Integer = 2)|VR = Déclarants_IG
+Step 008|21/11/2024 12:58:05||MOD_TRANS_XL_GETPARAM_FROM_TABLE|Récupération du paramètre dans un tableau(ARG: strParamName As String = Prm_FichierTravail_OngletImports2_TableauxStructurésRequis, SheetName As String = PARAM, tblParamName As String = tbl_PARAM_APPLI, Optional TblColumnForRead As Integer = 2)|VR = Imports
+Step 009|21/11/2024 12:58:05||MOD_TRANS_XL_GETPARAM_FROM_TABLE|Récupération du paramètre dans un tableau(ARG: strParamName As String = Prm_FichierTravail_OngletFinal_TableauxStructurésRequis, SheetName As String = PARAM, tblParamName As String = tbl_PARAM_APPLI, Optional TblColumnForRead As Integer = 2)|VR = Final
+Step 010|21/11/2024 12:58:05||MOD_TRANS_XL_GETPARAM_FROM_TABLE|Récupération du paramètre dans un tableau(ARG: strParamName As String = Prm_FichierTravail_OngletRéponses_TableauxStructurésRequis, SheetName As String = PARAM, tblParamName As String = tbl_PARAM_APPLI, Optional TblColumnForRead As Integer = 2)|VR = Réponses
+Step 011|21/11/2024 12:58:05||MOD_TRANS_XL_GETPARAM_FROM_TABLE|Récupération du paramètre dans un tableau(ARG: strParamName As String = Prm_FichierTravail_OngletCentral_PlagesNomméesRequises, SheetName As String = PARAM, tblParamName As String = tbl_PARAM_APPLI, Optional TblColumnForRead As Integer = 2)|VR = Prm_Tables;Prm_Temp2;Prm_Temp3;Prm_Destination;Prm_ModeleDestination
+Step 012|21/11/2024 12:58:05||MOD_TRANS_XL_GETPARAM_FROM_TABLE|Récupération du paramètre dans un tableau(ARG: strParamName As String = Prm_FichierTravail_OngletCentral_Valeur_PlagesNomméesRequises, SheetName As String = PARAM, tblParamName As String = tbl_PARAM_APPLI, Optional TblColumnForRead As Integer = 2)|VR = Prm_Tables;Prm_Temp2;Prm_Temp3
+Step 013|21/11/2024 12:58:05||MOD_TRANS_XL_GETPARAM_FROM_TABLE|Récupération du paramètre dans un tableau(ARG: strParamName As String = Prm_Tables_FichiersRequis, SheetName As String = PARAM, tblParamName As String = tbl_PARAM_APPLI, Optional TblColumnForRead As Integer = 2)|VR = Index.xlsx;Périmètre.xlsx;Plans.xlsx
+Step 014|21/11/2024 12:58:05||MOD_TRANS_XL_GETPARAM_FROM_TABLE|Récupération du paramètre dans un tableau(ARG: strParamName As String = Prm_Temp2_FichiersRequis, SheetName As String = PARAM, tblParamName As String = tbl_PARAM_APPLI, Optional TblColumnForRead As Integer = 2)|VR = *.xlsm
+Step 015|21/11/2024 12:58:05||InitialisationGlobales|  --> Initialisation des KPIs effectuée.
+Step 016|21/11/2024 12:58:05||InitialisationGlobales|Fin d'exécution de la procédure "InitialisationGlobales".
+Step 017|21/11/2024 12:58:05||CREATE_RAPPORT|Début d'exécution de la procédure "CREATE_RAPPORT" :
+Step 018|21/11/2024 12:58:05||CREATE_RAPPORT|  --> Suppression du fichier "Rapport.txt" existant et création d'un nouveau.
+Step 019|21/11/2024 12:58:05||CREATE_RAPPORT|  --> Création du Fichier "Rapport.txt".
+Step 020|21/11/2024 12:58:05||CREATE_RAPPORT|Fin d'exécution de la procédure "CREATE_RAPPORT".
+Step 021|21/11/2024 12:58:05||VérificationsPréalables|Vérification de l'existence du Classeur "Masterfile".
+Step 022|21/11/2024 12:58:16||VérificationsPréalables|   --> Vérification réussie.
+Step 023|21/11/2024 12:58:16||VérificationsPréalables|Vérification de l'existence du fichier "Go".
+Step 024|21/11/2024 12:58:16||VérificationsPréalables|   --> Vérification réussie.
+Step 025|21/11/2024 12:58:16||VérificationsPréalables|Vérification de l'existence du fichier "Rapport".
+Step 026|21/11/2024 12:58:16||VérificationsPréalables|   --> Vérification réussie.
+Step 027|21/11/2024 12:58:16||VérificationsPréalables|Vérification de l'existence du/des Onglet(s) "Déclarants" et "Central" - (renseigné(s) dans le paramètre "Prm_FichierTravail_OngletsRequis" de l'onglet "Param").
+Step 028|21/11/2024 12:58:16||VérificationsPréalables|   --> Vérification réussie.
+Step 029|21/11/2024 12:58:16||VérificationsPréalables|Vérification de l'existence du/des Tableau(x) Structuré(s) "Déclarants_IG" dans l'onglet "Déclarants" - (renseigné(s) dans le paramètre "Prm_FichierTravail_OngletDéclarants_TableauxStructurésRequis" de l'onglet "Param").
+Step 030|21/11/2024 12:58:16||VérificationsPréalables|   --> Vérification réussie.
+Step 031|21/11/2024 12:58:16||VérificationsPréalables|Vérification de l'existence du/des Tableau(x) Structuré(s) "Imports" dans l'onglet "Imports2" - (renseigné(s) dans le paramètre "Prm_FichierTravail_OngletImports2_TableauxStructurésRequis" de l'onglet "Param").
+Step 032|21/11/2024 12:58:16||VérificationsPréalables|   --> Vérification réussie.
+Step 033|21/11/2024 12:58:16||VérificationsPréalables|Vérification de l'existence du/des Tableau(x) Structuré(s) "Final" dans l'onglet "Final" - (renseigné(s) dans le paramètre "Prm_FichierTravail_OngletFinal_TableauxStructurésRequis" de l'onglet "Param").
+Step 034|21/11/2024 12:58:16||VérificationsPréalables|   --> Vérification réussie.
+Step 035|21/11/2024 12:58:16||VérificationsPréalables|Vérification de l'existence du/des Tableau(x) Structuré(s) "Réponses" dans l'onglet "Réponses" - (renseigné(s) dans le paramètre "Prm_FichierTravail_OngletRéponses_TableauxStructurésRequis" de l'onglet "Param").
+Step 036|21/11/2024 12:58:16||VérificationsPréalables|   --> Vérification réussie.
+Step 037|21/11/2024 12:58:16||VérificationsPréalables|Vérification de l'existence du/des Plage(s) Nommée(s) "Prm_Tables", "Prm_Temp2", "Prm_Temp3", "Prm_Destination", et "Prm_ModeleDestination" dans l'onglet "Central" - (renseignée(s) dans le paramètre "Prm_FichierTravail_OngletCentral_PlagesNomméesRequises" de l'onglet "Param").
+Step 038|21/11/2024 12:58:16||VérificationsPréalables|   --> Vérification réussie.
+Step 039|21/11/2024 12:58:16||VérificationsPréalables|Vérification de l'existence du/des répertoire(s) renseigné(s) dans les Plages Nommées "Prm_Tables", "Prm_Temp2", et "Prm_Temp3" dans l'onglet "Central" - (liste des Plages Nommées comportant les chemins des répertoires à vérifier renseignée dans le paramètre "Prm_FichierTravail_OngletCentral_Valeur_PlagesNomméesRequises" de l'onglet "Param").
+Step 040|21/11/2024 12:58:16||VérificationsPréalables|   --> Vérification réussie.
+Step 041|21/11/2024 12:58:16||VérificationsPréalables|Initialisation des variables "Prm_Tables", "Prm_Temp2", "Prm_Temp3", et "Prm_Destination".
+Step 042|21/11/2024 12:58:16||VérificationsPréalables|   --> Initialisation réussie.
+Step 043|21/11/2024 12:58:16||VérificationsPréalables|Vérification de l'existence du/des Fichiers "Index.xlsx", "Périmètre.xlsx", et "Plans.xlsx" - (renseigné(s) dans le paramètre "Prm_Tables_FichiersRequis" de l'onglet "Param").
+Step 044|21/11/2024 12:58:16||VérificationsPréalables|   --> Vérification réussie.
+Step 045|21/11/2024 12:58:16||VérificationsPréalables|Vérification de l'existence d'au moins un fichier ayant une extension ".xlsm" dans le répertoire indiqué dans la Plage Nommée "Prm_Temp2".
+Step 046|21/11/2024 12:58:16||VérificationsPréalables|   --> Vérification réussie.
+Step 001|21/11/2024 12:58:51||Main|Début d'exécution du programme :
+Step 002|21/11/2024 12:58:51||InitialisationGlobales|Début d'exécution de la procédure "InitialisationGlobales" :
+Step 003|21/11/2024 12:58:51||MOD_TRANS_XL_GETPARAM_FROM_TABLE|Récupération du paramètre dans un tableau(ARG: strParamName As String = Prm_FichierTravail, SheetName As String = PARAM, tblParamName As String = tbl_PARAM_APPLI, Optional TblColumnForRead As Integer = 2)|VR = C:\Users\CHARREJ\Desktop\#361\2 - Fichiers sources\361-Génération écarts IG\1. Production\2. Etat des écarts\Masterfile - IG v10.8.xlsm
+Step 004|21/11/2024 12:58:51||MOD_TRANS_XL_GETPARAM_FROM_TABLE|Récupération du paramètre dans un tableau(ARG: strParamName As String = Prm_FichierGo, SheetName As String = PARAM, tblParamName As String = tbl_PARAM_APPLI, Optional TblColumnForRead As Integer = 2)|VR = C:\Users\CHARREJ\Desktop\#361\4 - Programme - Livraison\Go.txt
+Step 005|21/11/2024 12:58:51||MOD_TRANS_XL_GETPARAM_FROM_TABLE|Récupération du paramètre dans un tableau(ARG: strParamName As String = Prm_FichierRapport, SheetName As String = PARAM, tblParamName As String = tbl_PARAM_APPLI, Optional TblColumnForRead As Integer = 2)|VR = C:\Users\CHARREJ\Desktop\#361\4 - Programme - Livraison\Rapport.txt
+Step 006|21/11/2024 12:58:51||MOD_TRANS_XL_GETPARAM_FROM_TABLE|Récupération du paramètre dans un tableau(ARG: strParamName As String = Prm_FichierTravail_OngletsRequis, SheetName As String = PARAM, tblParamName As String = tbl_PARAM_APPLI, Optional TblColumnForRead As Integer = 2)|VR = Déclarants;Central
+Step 007|21/11/2024 12:58:51||MOD_TRANS_XL_GETPARAM_FROM_TABLE|Récupération du paramètre dans un tableau(ARG: strParamName As String = Prm_FichierTravail_OngletDéclarants_TableauxStructurésRequis, SheetName As String = PARAM, tblParamName As String = tbl_PARAM_APPLI, Optional TblColumnForRead As Integer = 2)|VR = Déclarants_IG
+Step 008|21/11/2024 12:58:51||MOD_TRANS_XL_GETPARAM_FROM_TABLE|Récupération du paramètre dans un tableau(ARG: strParamName As String = Prm_FichierTravail_OngletImports2_TableauxStructurésRequis, SheetName As String = PARAM, tblParamName As String = tbl_PARAM_APPLI, Optional TblColumnForRead As Integer = 2)|VR = Imports
+Step 009|21/11/2024 12:58:51||MOD_TRANS_XL_GETPARAM_FROM_TABLE|Récupération du paramètre dans un tableau(ARG: strParamName As String = Prm_FichierTravail_OngletFinal_TableauxStructurésRequis, SheetName As String = PARAM, tblParamName As String = tbl_PARAM_APPLI, Optional TblColumnForRead As Integer = 2)|VR = Final
+Step 010|21/11/2024 12:58:51||MOD_TRANS_XL_GETPARAM_FROM_TABLE|Récupération du paramètre dans un tableau(ARG: strParamName As String = Prm_FichierTravail_OngletRéponses_TableauxStructurésRequis, SheetName As String = PARAM, tblParamName As String = tbl_PARAM_APPLI, Optional TblColumnForRead As Integer = 2)|VR = Réponses
+Step 011|21/11/2024 12:58:51||MOD_TRANS_XL_GETPARAM_FROM_TABLE|Récupération du paramètre dans un tableau(ARG: strParamName As String = Prm_FichierTravail_OngletCentral_PlagesNomméesRequises, SheetName As String = PARAM, tblParamName As String = tbl_PARAM_APPLI, Optional TblColumnForRead As Integer = 2)|VR = Prm_Tables;Prm_Temp2;Prm_Temp3;Prm_Destination;Prm_ModeleDestination
+Step 012|21/11/2024 12:58:51||MOD_TRANS_XL_GETPARAM_FROM_TABLE|Récupération du paramètre dans un tableau(ARG: strParamName As String = Prm_FichierTravail_OngletCentral_Valeur_PlagesNomméesRequises, SheetName As String = PARAM, tblParamName As String = tbl_PARAM_APPLI, Optional TblColumnForRead As Integer = 2)|VR = Prm_Tables;Prm_Temp2;Prm_Temp3
+Step 013|21/11/2024 12:58:51||MOD_TRANS_XL_GETPARAM_FROM_TABLE|Récupération du paramètre dans un tableau(ARG: strParamName As String = Prm_Tables_FichiersRequis, SheetName As String = PARAM, tblParamName As String = tbl_PARAM_APPLI, Optional TblColumnForRead As Integer = 2)|VR = Index.xlsx;Périmètre.xlsx;Plans.xlsx
+Step 014|21/11/2024 12:58:51||MOD_TRANS_XL_GETPARAM_FROM_TABLE|Récupération du paramètre dans un tableau(ARG: strParamName As String = Prm_Temp2_FichiersRequis, SheetName As String = PARAM, tblParamName As String = tbl_PARAM_APPLI, Optional TblColumnForRead As Integer = 2)|VR = *.xlsm
+Step 015|21/11/2024 12:58:51||InitialisationGlobales|  --> Initialisation des KPIs effectuée.
+Step 016|21/11/2024 12:58:51||InitialisationGlobales|Fin d'exécution de la procédure "InitialisationGlobales".
+Step 017|21/11/2024 12:58:51||CREATE_RAPPORT|Début d'exécution de la procédure "CREATE_RAPPORT" :
+Step 018|21/11/2024 12:58:51||CREATE_RAPPORT|  --> Suppression du fichier "Rapport.txt" existant et création d'un nouveau.
+Step 019|21/11/2024 12:58:51||CREATE_RAPPORT|  --> Création du Fichier "Rapport.txt".
+Step 020|21/11/2024 12:58:51||CREATE_RAPPORT|Fin d'exécution de la procédure "CREATE_RAPPORT".
+Step 021|21/11/2024 12:58:51||VérificationsPréalables|Vérification de l'existence du Classeur "Masterfile".
+Step 022|21/11/2024 12:59:01||VérificationsPréalables|   --> Vérification réussie.
+Step 023|21/11/2024 12:59:01||VérificationsPréalables|Vérification de l'existence du fichier "Go".
+Step 024|21/11/2024 12:59:01||VérificationsPréalables|   --> Vérification réussie.
+Step 025|21/11/2024 12:59:01||VérificationsPréalables|Vérification de l'existence du fichier "Rapport".
+Step 026|21/11/2024 12:59:01||VérificationsPréalables|   --> Vérification réussie.
+Step 027|21/11/2024 12:59:01||VérificationsPréalables|Vérification de l'existence du/des Onglet(s) "Déclarants" et "Central" - (renseigné(s) dans le paramètre "Prm_FichierTravail_OngletsRequis" de l'onglet "Param").
+Step 028|21/11/2024 12:59:01||VérificationsPréalables|   --> Vérification réussie.
+Step 029|21/11/2024 12:59:01||VérificationsPréalables|Vérification de l'existence du/des Tableau(x) Structuré(s) "Déclarants_IG" dans l'onglet "Déclarants" - (renseigné(s) dans le paramètre "Prm_FichierTravail_OngletDéclarants_TableauxStructurésRequis" de l'onglet "Param").
+Step 030|21/11/2024 12:59:01||VérificationsPréalables|   --> Vérification réussie.
+Step 031|21/11/2024 12:59:01||VérificationsPréalables|Vérification de l'existence du/des Tableau(x) Structuré(s) "Imports" dans l'onglet "Imports2" - (renseigné(s) dans le paramètre "Prm_FichierTravail_OngletImports2_TableauxStructurésRequis" de l'onglet "Param").
+Step 032|21/11/2024 12:59:01||VérificationsPréalables|   --> Vérification réussie.
+Step 033|21/11/2024 12:59:01||VérificationsPréalables|Vérification de l'existence du/des Tableau(x) Structuré(s) "Final" dans l'onglet "Final" - (renseigné(s) dans le paramètre "Prm_FichierTravail_OngletFinal_TableauxStructurésRequis" de l'onglet "Param").
+Step 034|21/11/2024 12:59:01||VérificationsPréalables|   --> Vérification réussie.
+Step 035|21/11/2024 12:59:01||VérificationsPréalables|Vérification de l'existence du/des Tableau(x) Structuré(s) "Réponses" dans l'onglet "Réponses" - (renseigné(s) dans le paramètre "Prm_FichierTravail_OngletRéponses_TableauxStructurésRequis" de l'onglet "Param").
+Step 036|21/11/2024 12:59:01||VérificationsPréalables|   --> Vérification réussie.
+Step 037|21/11/2024 12:59:01||VérificationsPréalables|Vérification de l'existence du/des Plage(s) Nommée(s) "Prm_Tables", "Prm_Temp2", "Prm_Temp3", "Prm_Destination", et "Prm_ModeleDestination" dans l'onglet "Central" - (renseignée(s) dans le paramètre "Prm_FichierTravail_OngletCentral_PlagesNomméesRequises" de l'onglet "Param").
+Step 038|21/11/2024 12:59:01||VérificationsPréalables|   --> Vérification réussie.
+Step 039|21/11/2024 12:59:01||VérificationsPréalables|Vérification de l'existence du/des répertoire(s) renseigné(s) dans les Plages Nommées "Prm_Tables", "Prm_Temp2", et "Prm_Temp3" dans l'onglet "Central" - (liste des Plages Nommées comportant les chemins des répertoires à vérifier renseignée dans le paramètre "Prm_FichierTravail_OngletCentral_Valeur_PlagesNomméesRequises" de l'onglet "Param").
+Step 040|21/11/2024 12:59:01||VérificationsPréalables|   --> Vérification réussie.
+Step 041|21/11/2024 12:59:01||VérificationsPréalables|Initialisation des variables "Prm_Tables", "Prm_Temp2", "Prm_Temp3", et "Prm_Destination".
+Step 042|21/11/2024 12:59:01||VérificationsPréalables|   --> Initialisation réussie.
+Step 043|21/11/2024 12:59:01||VérificationsPréalables|Vérification de l'existence du/des Fichiers "Index.xlsx", "Périmètre.xlsx", et "Plans.xlsx" - (renseigné(s) dans le paramètre "Prm_Tables_FichiersRequis" de l'onglet "Param").
+Step 044|21/11/2024 12:59:01||VérificationsPréalables|   --> Vérification réussie.
+Step 045|21/11/2024 12:59:01||VérificationsPréalables|Vérification de l'existence d'au moins un fichier ayant une extension ".xlsm" dans le répertoire indiqué dans la Plage Nommée "Prm_Temp2".
+Step 046|21/11/2024 12:59:01||VérificationsPréalables|   --> Vérification réussie.
+Step 047|21/11/2024 12:59:01||ErrorManagment\ERROR :VérificationsPréalables => Trop de fichiers
+Step 048|21/11/2024 12:59:01||End_Clean_OnError|Début d'exécution de la procédure "End_Clean_OnError" :
+Step 049|21/11/2024 12:59:02|ENVOI DES KPI|KPI| => Envoi du KPI = 
+{"Code Process" : "361","Sous code Process" : "361-2","Nom du process" : "GTVA Generation des ecarts IG","Direction" : "DFI","Département" : "GTVA","Jour/homme passé" : "0","Technologie" : "VBA","Statut" : "KO","Date / heure début" : "2024-11-21T12:58:51Z","Date / heure fin" : "2024-11-21T12:59:01Z","Nombre occurences lues" : "0","Nombre occurences traitées" : "0","Nombre occurences rejetées" : "0","Nb clics / actions" : "49","Environnement" : "Production"}
+Step 050|21/11/2024 12:59:03|ENVOI DES KPI|UPDATE_RAPPORT|UPDATE Fichier Rapport.txt: => Fin inattendue du process VBA, merci de consulter le LOG.
+Step 051|21/11/2024 12:59:03|ENVOI DES KPI|End_Clean_OnError|Fin d'exécution de la procédure "End_Clean_OnError".
+Step 052|21/11/2024 12:59:03|ENVOI DES KPI|End_Clean_OnError|Temps d'exécution du programme : 0h 0mn 12sec.
+Step 053|21/11/2024 12:59:03|ENVOI DES KPI|End_Clean_OnError|Exécution partielle du programme. Fin du programme. 
+Step 054|21/11/2024 12:59:03|ENVOI DES KPI|UPDATE_FILE_GO|UPDATE Fichier GO.txt => KO
