@@ -1,16 +1,18 @@
-Auteur : Jean-Matthieu Charre  
+Auteur  
+Prenom Nom : Jean-Matthieu Charre  
 Rôle : Développeur VBA  
 Contexte : CACIB Direction Financière - DFI / GTVA  
 Année : 2024  
 ________________________________________
-Licence : Projet interne CACIB Fast-IT / DFI - Reproduction interdite.
-Le code présenté sur GitHub est une version à but de showcase technique uniquement.
+Licence : Projet interne CACIB Fast-IT / DFI - Reproduction interdite.  
+Le code présenté sur GitHub est une version à but de showcase technique uniquement.  
 ________________________________________
-Notes : Ce développement illustre ma capacité à :
-•	concevoir des automatisations Excel robustes et compatibles RPA
-•	intégrer PowerQuery, des logs, des KPIs, et des gestions d’erreurs structurées
-•	produire un code fiable, maintenable, conforme aux standards industriels, et s’insérant dans un framework de développement entreprise
-•	travailler en collaboration directe avec des équipes de Business Analysts
+Notes  
+Ce développement illustre ma capacité à :  
+•	concevoir des automatisations Excel robustes et compatibles RPA  
+•	intégrer PowerQuery, des logs, des KPIs, et des gestions d’erreurs structurées  
+•	produire un code fiable, maintenable, conforme aux standards industriels, et s’insérant dans un framework de développement entreprise  
+•	travailler en collaboration directe avec des équipes de Business Analysts  
 
 
 
