@@ -48,14 +48,14 @@ Génération de l’État des Écarts Intragroupes
 -	Lancement par clic sur bouton Excel
 -	Si erreur dans le traitement, MsgBox affichant le type d’erreur
 -	MsgBox de fin de traitement affichée
-
-
+<br>
+<br>
 A)	Contexte et objectif
 
 Ce développement VBA/Excel vise à automatiser la génération de fichiers d’écarts intragroupes (environ 280 fichiers en output) pour le département DFI / GTVA à partir de données issues du process GTVA.  
 Le traitement, historiquement manuel et chronophage, a été entièrement automatisé pour être exécuté en autonomie par un robot RPA (sans intervention humaine).
-
-
+<br>
+<br>
 B)	Architecture du process
 
 1.	Le robot RPA crée un fichier vide ‘GO.txt’ et lance un script ’cmd.bat’,
@@ -68,8 +68,8 @@ B)	Architecture du process
 3.5.	Crée le rapport d’exécution (‘Rapport.txt’),
 3.6.	Renseigne le fichier ‘GO.txt’  avec le statut final (‘OK’ ou ‘KO’, signifiant le bon déroulement ou pas jusqu’à la fin du programme).
 3.7.	Le robot lit le contenu du fichier ‘GO.txt’ envoie un rapport par e-mail et clôture le traitement.
-
-
+<br>
+<br>
 C)	Fonctionnalités principales
 
 -	Exécution autonome : Lancement par `cmd.bat` sans message ni interaction utilisateur.
@@ -82,8 +82,8 @@ C)	Fonctionnalités principales
 -	Rapport d’exécution : Génération de `Rapport.txt` résumant le résultat global du traitement.
 -	Fichier d’état GO.txt : Statut `OK` ou `KO` en fin d’exécution, lu par le robot pour poursuivre ou interrompre le flux.
 -	KPI Fast-IT : Génération d’un fichier JSON contenant les métriques du traitement (durée, statut, entités, etc.).
-
-
+<br>
+<br>
 D)	Détails du fonctionnement
 
 1)	Vérification des sources
