@@ -14,8 +14,8 @@ Ce développement illustre ma capacité à :
 •	intégrer PowerQuery, des logs, des KPIs, et des gestions d’erreurs structurées  
 •	produire un code fiable, maintenable, conforme aux standards industriels, et s’insérant dans un framework de développement entreprise  
 •	travailler en collaboration directe avec des équipes de Business Analysts  
-  
-  
+<br>
+<br>
 Développement VBA
 Génération de l’État des Écarts Intragroupes
   
