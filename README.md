@@ -86,12 +86,12 @@ C)	Fonctionnalités principales
 <br>
 D)	Détails du fonctionnement
 <br>
-1)	Vérification des sources
-Le programme contrôle la présence :
-- des onglets *Déclarants* et *Central* ;
-- des plages nommées : `Déclarants_IG`, `Prm_Tables`, `Prm_Temp2`, `Prm_Temp3`, `Prm_Destination`, `Prm_ModeleDestination` ;
-- des fichiers attendus dans les répertoires (`Index.xlsx`, `Périmètre.xlsx`, `Plans.xlsx`, etc.).
-Toute anomalie est reportée dans `Rapport.txt` et mène à un `KO`.
+1)	Vérification des sources<br>
+Le programme contrôle la présence :<br>
+- des onglets `Déclarants` et `Central`,<br>
+- des plages nommées : `Déclarants_IG`, `Prm_Tables`, `Prm_Temp2`, `Prm_Temp3`, `Prm_Destination`, `Prm_ModeleDestination`,<br>
+- des fichiers attendus dans les répertoires (`Index.xlsx`, `Périmètre.xlsx`, `Plans.xlsx`, etc.).<br>
+Toute anomalie est reportée dans `Rapport.txt` et mène à un `KO`.<br>
 <br>
 2)	Création du dossier du jour
 Le chemin indiqué dans `Prm_ModeleDestination` peut contenir des variables :
