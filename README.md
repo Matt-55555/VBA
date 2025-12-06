@@ -5,7 +5,7 @@ Contexte : CACIB Direction Financière - DFI / GTVA
 Année : 2024  
 ________________________________________
 Licence : Projet interne CACIB Fast-IT / DFI - Reproduction interdite.  
-Le code présenté sur GitHub est une version à but de showcase technique uniquement.  
+Le code présenté sur GitHub a uniquement pour objectif de démontrer mes compétences techniques.  
 ________________________________________
 Notes  
 Ce développement illustre ma capacité à :  
