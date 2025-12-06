@@ -1,7 +1,7 @@
-Auteur : Jean-Matthieu Charre
-Rôle : Développeur VBA
-Contexte : CACIB Direction Financière - DFI / GTVA
-Année : 2024
+Auteur : Jean-Matthieu Charre  
+Rôle : Développeur VBA  
+Contexte : CACIB Direction Financière - DFI / GTVA  
+Année : 2024  
 ________________________________________
 Licence : Projet interne CACIB Fast-IT / DFI - Reproduction interdite.
 Le code présenté sur GitHub est une version à but de showcase technique uniquement.
