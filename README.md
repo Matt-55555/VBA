@@ -17,9 +17,9 @@ Ce développement illustre ma capacité à :
 <br>
 <br>
 Développement VBA
-Génération de l’État des Écarts Intragroupes
-  
-  
+Génération de l’État des Écarts Intragroupes  
+<br>
+<br>
 ** Technologies et normes utilisées  
   
 -	Excel VBA (compatible Office 32 bits et 64 bits)  
