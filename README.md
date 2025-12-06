@@ -56,7 +56,9 @@ Ce développement VBA/Excel vise à automatiser la génération de fichiers d’
 Le traitement, historiquement manuel et chronophage, a été entièrement automatisé pour être exécuté en autonomie par un robot RPA (sans intervention humaine).
 <br>
 <br>
+<br>
 B)	Architecture du process
+<br>
 <br>
 1.	Le robot RPA crée un fichier vide ‘GO.txt’ et lance un script ’cmd.bat’,
 2.	Le script démarre Excel + VBA,
@@ -70,7 +72,9 @@ B)	Architecture du process
 3.7.	Le robot lit le contenu du fichier ‘GO.txt’ envoie un rapport par e-mail et clôture le traitement.
 <br>
 <br>
+<br>
 C)	Fonctionnalités principales
+<br>
 <br>
 -	Exécution autonome : Lancement par `cmd.bat` sans message ni interaction utilisateur,<br>
 -	Compatibilité RPA : Gestion des erreurs, logs, KPI et fichiers d’état normalisés,<br>
@@ -84,16 +88,21 @@ C)	Fonctionnalités principales
 -	KPI Fast-IT : Génération d’un fichier JSON contenant les métriques du traitement (durée, statut, entités, etc.).<br>
 <br>
 <br>
+<br>
 D)	Détails du fonctionnement
 <br>
+<br>
 1)	Vérification des sources<br>
+<br>
 Le programme contrôle la présence :<br>
 - des onglets `Déclarants` et `Central`,<br>
 - des plages nommées : `Déclarants_IG`, `Prm_Tables`, `Prm_Temp2`, `Prm_Temp3`, `Prm_Destination`, `Prm_ModeleDestination`,<br>
 - des fichiers attendus dans les répertoires (`Index.xlsx`, `Périmètre.xlsx`, `Plans.xlsx`, etc.).<br>
 Toute anomalie est reportée dans `Rapport.txt` et mène à un `KO`.<br>
 <br>
+<br>
 2)	Création du dossier du jour
+<br>
 Le chemin indiqué dans `Prm_ModeleDestination` peut contenir des variables :
 - `AA` → année sur 2 chiffres  
 - `MM` → mois  
@@ -102,17 +111,23 @@ Exemple :
 `N:\Projets01\ROBOTISATION_DFI\361\1. Production\2. Etat des écarts\AA.MM.JJ`  
 → devient `N:\Projets01\ROBOTISATION_DFI\361\1. Production\2. Etat des écarts\25.11.13`
 <br>
+<br>
 3)	Paramétrage des entités
+<br>
 Le tableau « Déclarants_IG » est parcouru et toutes les lignes de la colonne A sont renseignées avec un “X”.
 <br>
+<br>
 4)	Exécution du process
+<br>
 La procédure « Export » est appelée :
 -	actualisation PowerQuery ;
 -	génération d’un fichier par entité ;
 -	suivi des erreurs métier ;
 -	ajout de logs spécifiques.
 <br>
+<br>
 5)	Reporting & fin de process
+<br>
 - Si le programme s’est déroulé correctement :
 -	« Rapport.txt » : « Traitement terminé sans anomalie » et envoi des KPIs par email.
 -	« GO.txt » : ‘OK’
@@ -120,9 +135,11 @@ La procédure « Export » est appelée :
 -	« Rapport.txt » : message d’erreur explicite et envoi des KPIs par email.
 -	« GO.txt » → ‘KO’
 <br>
+<br>
 6)	KPI - Suivi de performance
+<br>
 Un fichier JSON est généré à la fin du traitement avec des indicateurs clefs sur le process réalisé :
-
+<br>
 | Clé | Exemple | Description |
 |------|----------|-------------|
 | `Code process` | `361` | Identifiant principal |
