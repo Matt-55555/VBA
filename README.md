@@ -51,13 +51,13 @@ Génération de l’État des Écarts Intragroupes
 <br>
 <br>
 A)	Contexte et objectif
-
+<br>
 Ce développement VBA/Excel vise à automatiser la génération de fichiers d’écarts intragroupes (environ 280 fichiers en output) pour le département DFI / GTVA à partir de données issues du process GTVA.  
 Le traitement, historiquement manuel et chronophage, a été entièrement automatisé pour être exécuté en autonomie par un robot RPA (sans intervention humaine).
 <br>
 <br>
 B)	Architecture du process
-
+<br>
 1.	Le robot RPA crée un fichier vide ‘GO.txt’ et lance un script ’cmd.bat’,
 2.	Le script démarre Excel + VBA,
 3.	Le programme VBA exécute le process principal :
@@ -71,23 +71,22 @@ B)	Architecture du process
 <br>
 <br>
 C)	Fonctionnalités principales
-
--	Exécution autonome : Lancement par `cmd.bat` sans message ni interaction utilisateur.
--	Compatibilité RPA : Gestion des erreurs, logs, KPI et fichiers d’état normalisés.
--	Vérification préliminaire : Contrôle de la présence des onglets, plages nommées, dossiers et fichiers sources.
--	Création du dossier du jour : Génération automatique d’un répertoire daté (`AA.MM.JJ`) selon le modèle paramétré dans Central/Prm_ModeleDestination.
--	Paramétrage automatique des entités : Renseignement automatique d’un “X” dans la colonne A du tableau `Déclarants_IG`.
--	Lancement du process métier : Exécution de la procédure `Export`, responsable de la création des fichiers par entité.
--	Logs détaillés : Journalisation temps réel des actions dans `.\Log\YYYYMMDD_HHMM.txt`.
--	Rapport d’exécution : Génération de `Rapport.txt` résumant le résultat global du traitement.
--	Fichier d’état GO.txt : Statut `OK` ou `KO` en fin d’exécution, lu par le robot pour poursuivre ou interrompre le flux.
--	KPI Fast-IT : Génération d’un fichier JSON contenant les métriques du traitement (durée, statut, entités, etc.).
+<br>
+-	Exécution autonome : Lancement par `cmd.bat` sans message ni interaction utilisateur,  
+-	Compatibilité RPA : Gestion des erreurs, logs, KPI et fichiers d’état normalisés,  
+-	Vérification préliminaire : Contrôle de la présence des onglets, plages nommées, dossiers et fichiers sources,  
+-	Création du dossier du jour : Génération automatique d’un répertoire daté (`AA.MM.JJ`) selon le modèle paramétré dans Central/Prm_ModeleDestination,  
+-	Paramétrage automatique des entités : Renseignement automatique d’un “X” dans la colonne A du tableau `Déclarants_IG`,  
+-	Lancement du process métier : Exécution de la procédure `Export`, responsable de la création des fichiers par entité,  
+-	Logs détaillés : Journalisation temps réel des actions dans `.\Log\YYYYMMDD_HHMM.txt`,  
+-	Rapport d’exécution : Génération de `Rapport.txt` résumant le résultat global du traitement,  
+-	Fichier d’état GO.txt : Statut `OK` ou `KO` en fin d’exécution, lu par le robot pour poursuivre ou interrompre le flux,  
+-	KPI Fast-IT : Génération d’un fichier JSON contenant les métriques du traitement (durée, statut, entités, etc.),  
 <br>
 <br>
 D)	Détails du fonctionnement
-
+<br>
 1)	Vérification des sources
-
 Le programme contrôle la présence :
 - des onglets *Déclarants* et *Central* ;
 - des plages nommées : `Déclarants_IG`, `Prm_Tables`, `Prm_Temp2`, `Prm_Temp3`, `Prm_Destination`, `Prm_ModeleDestination` ;
