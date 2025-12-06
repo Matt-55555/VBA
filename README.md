@@ -73,15 +73,15 @@ B)	Architecture du process
 C)	Fonctionnalités principales
 <br>
 -	Exécution autonome : Lancement par `cmd.bat` sans message ni interaction utilisateur,<br>
--	Compatibilité RPA : Gestion des erreurs, logs, KPI et fichiers d’état normalisés,  
--	Vérification préliminaire : Contrôle de la présence des onglets, plages nommées, dossiers et fichiers sources,  
--	Création du dossier du jour : Génération automatique d’un répertoire daté (`AA.MM.JJ`) selon le modèle paramétré dans Central/Prm_ModeleDestination,  
--	Paramétrage automatique des entités : Renseignement automatique d’un “X” dans la colonne A du tableau `Déclarants_IG`,  
--	Lancement du process métier : Exécution de la procédure `Export`, responsable de la création des fichiers par entité,  
--	Logs détaillés : Journalisation temps réel des actions dans `.\Log\YYYYMMDD_HHMM.txt`,  
--	Rapport d’exécution : Génération de `Rapport.txt` résumant le résultat global du traitement,  
--	Fichier d’état GO.txt : Statut `OK` ou `KO` en fin d’exécution, lu par le robot pour poursuivre ou interrompre le flux,  
--	KPI Fast-IT : Génération d’un fichier JSON contenant les métriques du traitement (durée, statut, entités, etc.),  
+-	Compatibilité RPA : Gestion des erreurs, logs, KPI et fichiers d’état normalisés,<br>
+-	Vérification préliminaire : Contrôle de la présence des onglets, plages nommées, dossiers et fichiers sources,<br>
+-	Création du dossier du jour : Génération automatique d’un répertoire daté (`AA.MM.JJ`) selon le modèle paramétré dans Central/Prm_ModeleDestination,<br>
+-	Paramétrage automatique des entités : Renseignement automatique d’un “X” dans la colonne A du tableau `Déclarants_IG`,<br>
+-	Lancement du process métier : Exécution de la procédure `Export`, responsable de la création des fichiers par entité,<br>
+-	Logs détaillés : Journalisation temps réel des actions dans `.\Log\YYYYMMDD_HHMM.txt`,<br>
+-	Rapport d’exécution : Génération de `Rapport.txt` résumant le résultat global du traitement,<br>
+-	Fichier d’état GO.txt : Statut `OK` ou `KO` en fin d’exécution, lu par le robot pour poursuivre ou interrompre le flux,<br>
+-	KPI Fast-IT : Génération d’un fichier JSON contenant les métriques du traitement (durée, statut, entités, etc.).<br>
 <br>
 <br>
 D)	Détails du fonctionnement
@@ -91,12 +91,9 @@ Le programme contrôle la présence :
 - des onglets *Déclarants* et *Central* ;
 - des plages nommées : `Déclarants_IG`, `Prm_Tables`, `Prm_Temp2`, `Prm_Temp3`, `Prm_Destination`, `Prm_ModeleDestination` ;
 - des fichiers attendus dans les répertoires (`Index.xlsx`, `Périmètre.xlsx`, `Plans.xlsx`, etc.).
-
 Toute anomalie est reportée dans `Rapport.txt` et mène à un `KO`.
-
-
+<br>
 2)	Création du dossier du jour
-
 Le chemin indiqué dans `Prm_ModeleDestination` peut contenir des variables :
 - `AA` → année sur 2 chiffres  
 - `MM` → mois  
@@ -104,34 +101,26 @@ Le chemin indiqué dans `Prm_ModeleDestination` peut contenir des variables :
 Exemple :  
 `N:\Projets01\ROBOTISATION_DFI\361\1. Production\2. Etat des écarts\AA.MM.JJ`  
 → devient `N:\Projets01\ROBOTISATION_DFI\361\1. Production\2. Etat des écarts\25.11.13`
-
-
+<br>
 3)	Paramétrage des entités
-
 Le tableau « Déclarants_IG » est parcouru et toutes les lignes de la colonne A sont renseignées avec un “X”.
-
-
+<br>
 4)	Exécution du process
-
 La procédure « Export » est appelée :
 -	actualisation PowerQuery ;
 -	génération d’un fichier par entité ;
 -	suivi des erreurs métier ;
 -	ajout de logs spécifiques.
-
-
+<br>
 5)	Reporting & fin de process
-
 - Si le programme s’est déroulé correctement :
 -	« Rapport.txt » : « Traitement terminé sans anomalie » et envoi des KPIs par email.
 -	« GO.txt » : ‘OK’
 - En cas d’erreur :
 -	« Rapport.txt » : message d’erreur explicite et envoi des KPIs par email.
 -	« GO.txt » → ‘KO’
-
-
+<br>
 6)	KPI - Suivi de performance
-
 Un fichier JSON est généré à la fin du traitement avec des indicateurs clefs sur le process réalisé :
 
 | Clé | Exemple | Description |
