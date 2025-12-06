@@ -72,7 +72,7 @@ B)	Architecture du process
 <br>
 C)	Fonctionnalités principales
 <br>
--	Exécution autonome : Lancement par `cmd.bat` sans message ni interaction utilisateur,  
+-	Exécution autonome : Lancement par `cmd.bat` sans message ni interaction utilisateur,<br>
 -	Compatibilité RPA : Gestion des erreurs, logs, KPI et fichiers d’état normalisés,  
 -	Vérification préliminaire : Contrôle de la présence des onglets, plages nommées, dossiers et fichiers sources,  
 -	Création du dossier du jour : Génération automatique d’un répertoire daté (`AA.MM.JJ`) selon le modèle paramétré dans Central/Prm_ModeleDestination,  
