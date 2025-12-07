@@ -22,8 +22,7 @@ Ce développement illustre ma capacité à :
 Génération de l’État des Écarts Intragroupes</h1>  
 <br>
 <br>
-<br>
-** Technologies et normes utilisées  
+<strong>*** Technologies et normes utilisées</strong>  
 <br>
 -	Excel VBA (compatible Office 32 bits et 64 bits)  
 -	Requêtes PowerQuery  
