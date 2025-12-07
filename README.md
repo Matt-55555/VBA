@@ -17,7 +17,7 @@ Ce développement illustre ma capacité à :
 <br>
 <br>
 <br>
-<h1>Développement VBA  
+<h1>Développement VBA<br>
 Génération de l’État des Écarts Intragroupes</h1>  
 <br>
 <br>
