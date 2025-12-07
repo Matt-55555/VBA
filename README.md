@@ -61,16 +61,16 @@ Le traitement, historiquement manuel et chronophage, a été entièrement automa
 <strong>B)	Architecture du process</strong>
 <br>
 <br>
-1.	Le robot RPA crée un fichier vide "GO.txt" et lance un script "cmd.bat"
-2.	Le script ouvre l'application Excel, et une procédure évènementielle dans l'application lance le programme VBA (procédure "Sub_Main" du Module "PROCESS_MAIN" du Classeur "361 - v1.2.2.xlsm")
-3.	La procédure "Sub_Main" appelle de manière séquentielle des procédures secondaires pour réaliser les traitements nécessaires sur les données
-•	Vérification de l'ensemble des paramètres necessaires au bon fonctionnement du programme (fichiers, dossiers, worksheets, tableaux structurés, colonnes de tableaux, variables, etc)   
-•	Paramétrage des entités intragroupe à traiter
-•	Lancement des requêtes Power Query
-•	Création du rapport d’exécution ("Rapport.txt")
-•	Envoi des KPIs
-•	Renseignement du fichier "GO.txt" avec le statut final (‘OK’ ou ‘KO’ signifiant le bon déroulement ou pas jusqu’à la fin du programme)
-•	Le robot lit le contenu du fichier ‘GO.txt’ et envoie un rapport par e-mail et clôture le traitement.
+1.	Le robot RPA crée un fichier vide "GO.txt" et lance un script "cmd.bat"<br>
+2.	Le script ouvre l'application Excel, et une procédure évènementielle dans l'application lance le programme VBA (procédure "Sub_Main" du Module "PROCESS_MAIN" du Classeur "361 - v1.2.2.xlsm")<br>
+3.	La procédure "Sub_Main" appelle de manière séquentielle des procédures secondaires pour réaliser les traitements nécessaires sur les données<br>
+•	Vérification de l'ensemble des paramètres necessaires au bon fonctionnement du programme (fichiers, dossiers, worksheets, tableaux structurés, colonnes de tableaux, variables, etc)<br>
+•	Paramétrage des entités intragroupe à traiter<br>
+•	Lancement des requêtes Power Query<br>
+•	Création du rapport d’exécution ("Rapport.txt")<br>
+•	Envoi des KPIs<br>
+•	Renseignement du fichier "GO.txt" avec le statut final (‘OK’ ou ‘KO’ signifiant le bon déroulement ou pas jusqu’à la fin du programme)<br>
+•	Le robot lit le contenu du fichier ‘GO.txt’ et envoie un rapport par e-mail et clôture le traitement.<br>
 <br>
 <br>
 <br>
