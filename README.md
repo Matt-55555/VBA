@@ -23,21 +23,23 @@ Génération de l’État des Écarts Intragroupes
 <br>
 <br>
 ** Technologies et normes utilisées  
-  
+<br>
 -	Excel VBA (compatible Office 32 bits et 64 bits)  
--	Requêtes PowerQuery,
--	RPA integration via CMD + fichiers d’état, 
--	Logging textuel en temps réel,
--	export de données en JSON (KPI),
--	Gestion des erreurs différenciée en fonction du mode de lancement (RPA ou manuel).
-  
+-	Requêtes PowerQuery  
+-	RPA integration via CMD + fichiers d’état  
+-	Logging textuel en temps réel  
+-	export de données en JSON (KPI)  
+-	Gestion des erreurs différenciée en fonction du mode de lancement (RPA ou manuel)
+<br>
+<br>
 ** Fichiers utilisés  
-  
+<br>
 -	« Classeur « 361 - v1.2.2.xlsm » : Classeur contenant le programme VBA
 -	« Masterfile - IG v10.8.xlsx » : fichier source
-  
+<br>
+<br>
 ** Modes de lancement  
-  
+<br>
 1.	Mode RPA (automatique)
 -	Lancement via `cmd.bat`
 -	Aucun message à l’écran
@@ -61,12 +63,14 @@ B)	Architecture du process
 <br>
 <br>
 1.	Le robot RPA crée un fichier vide ‘GO.txt’ et lance un script ’cmd.bat’,
-2.	Le script démarre Excel + VBA,
-3.	Le programme VBA exécute le process principal :
-3.1.	Vérifie les chemins et sources nécessaires,
-3.2.	Crée le dossier de travail du jour,
-3.3.	Sélectionne les entités listées dans l’onglet « Déclarants » du Classeur « Masterfile - IG v10.8 - ORIGINAL.xlsm » (classeur en input du programme),
-3.4.	Lance la procédure « Sub_Main » localisée dans le Module « PROCESS_MAIN » du Classeur « 361 - v1.2.2.xlsm » (classeur contenant le programme principal),
+2.	Le script démarre Excel + le programme VBA (procédure "Sub_Main" localisée dans le Module "PROCESS_MAIN" du Classeur "361 - v1.2.2.xlsm" (classeur contenant le programme principal))
+3.	La procédure "Sub_Main" appelle de manière séquentielle des procédures secondaires
+
+4.	
+3.1.	Vérifie l'eixstence de l'ensemble des paramètres necessaires au bon fonctionnement du programme (chemins de fichiers, feuilles spécifiques dans les classeurs, tableaux structurés, variables, etc)   
+3.2.	Crée le dossier qui récupère les fichiers en outputs du programme
+3.3.	Sélectionne les entités à traiter dans l’onglet "Déclarants" du Classeur "Masterfile - IG v10.8 - ORIGINAL.xlsm" (classeur en input du programme)
+3.4.	Lance la ,
 3.5.	Crée le rapport d’exécution (‘Rapport.txt’),
 3.6.	Renseigne le fichier ‘GO.txt’  avec le statut final (‘OK’ ou ‘KO’, signifiant le bon déroulement ou pas jusqu’à la fin du programme).
 3.7.	Le robot lit le contenu du fichier ‘GO.txt’ envoie un rapport par e-mail et clôture le traitement.
