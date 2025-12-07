@@ -76,7 +76,6 @@ B)	Architecture du process
 <br>
 C)	Détails du fonctionnement
 <br>
-<br>
 1)	Vérification des sources<br>
 <br>
 Le programme contrôle la présence :<br>
