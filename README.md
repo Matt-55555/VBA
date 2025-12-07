@@ -39,26 +39,26 @@ Génération de l’État des Écarts Intragroupes</h1>
 <br>
 <strong>*** Modes de lancement</strong>
 <br>
-1.	Mode RPA (automatique)
-- 	Lancement via "cmd.bat"
-- 	Aucun message à l’écran
-- 	Fin silencieuse : fermeture propre et automatique de l’application et du fichier source (même en cas de bugs - car application tourne sur une VDI)
-- 	Logs + KPI + GO.txt + Rapport.txt générés
-
-2.	Mode manuel
-- 	Lancement par clic sur bouton Excel
-- 	Si erreur dans le traitement, MsgBox affichant le type d’erreur
-- 	En fin de programme, MsgBox de fin de traitement (l'application reste ouverte ainsi que le fichier source)
+1.	Mode RPA (automatique)<br>
+- 	Lancement via "cmd.bat"<br>
+- 	Aucun message à l’écran<br>
+- 	Fin silencieuse : fermeture propre et automatique de l’application et du fichier source (même en cas de bugs - car application tourne sur une VDI)<br>
+- 	Logs + KPI + GO.txt + Rapport.txt générés<br>
+2.	Mode manuel<br>
+- 	Lancement par clic sur bouton Excel<br>
+- 	Si erreur dans le traitement, MsgBox affichant le type d’erreur<br>
+- 	En fin de programme, MsgBox de fin de traitement (l'application reste ouverte ainsi que le fichier source)<br>
 <br>
 <br>
-A)	Contexte et objectif
+<strong>A)	Contexte et objectif</strong>
+<br>
 <br>
 Ce développement VBA/Excel vise à automatiser la génération de fichiers d’écarts intragroupes (environ 280 classeurs Excel à générer) pour le département DFI / GTVA à partir de données issues du process GTVA.  
 Le traitement, historiquement manuel et chronophage, a été entièrement automatisé pour être exécuté en autonomie par un robot RPA (sans intervention humaine).
 <br>
 <br>
 <br>
-B)	Architecture du process
+<strong>B)	Architecture du process</strong>
 <br>
 <br>
 1.	Le robot RPA crée un fichier vide "GO.txt" et lance un script "cmd.bat"
@@ -74,10 +74,10 @@ B)	Architecture du process
 <br>
 <br>
 <br>
-C)	Détails du fonctionnement
+<strong>C)	Détails du fonctionnement</strong>
+<br>
 <br>
 1)	Vérification des sources<br>
-<br>
 Le programme contrôle la présence :<br>
 - des onglets `Déclarants` et `Central`,<br>
 - des plages nommées : `Déclarants_IG`, `Prm_Tables`, `Prm_Temp2`, `Prm_Temp3`, `Prm_Destination`, `Prm_ModeleDestination`,<br>
@@ -124,20 +124,20 @@ La procédure « Export » est appelée :
 <br>
 Un fichier JSON est généré à la fin du traitement avec des indicateurs clefs sur le process réalisé :
 <br>
-| Clé | Exemple | Description |
-|------|----------|-------------|
-| `Code process` | `361` | Identifiant principal |
-| `Sous code process` | `361-2` | Numéro de lot |
-| `Nom du process` | `GTVA_Generation_Ecarts_IG` | Nom technique sans accent |
-| `Direction` | `DFI` | Direction métier |
-| `Département` | `GTVA` | Département |
-| `Jour/homme passé` | `1.32` | Calculé : 0,002 par entité traitée |
-| `Technologie` | `VBA` | En dur |
-| `Statut` | `OK` / `KO` | Statut global |
-| `Date/heure début` | `2025-11-13T21:00:00.000Z` | Timestamp ISO |
-| `Date/heure fin` | `2025-11-13T23:30:00.000Z` | Timestamp ISO |
-| `Nb occurrences lues` | `278` | Entités totales |
-| `Nb occurrences traitées` | `278` | Entités réussies |
-| `Nb occurrences rejetées` | `0` | Différence |
-| `Nb actions` | `1500` | Nombre d’actions automatisées |
-| `Environnement` | `Production` | Test / Production |
+| Clé | Exemple | Description |<br>
+|------|----------|-------------|<br>
+| `Code process` | `361` | Identifiant principal |<br>
+| `Sous code process` | `361-2` | Numéro de lot |<br>
+| `Nom du process` | `GTVA_Generation_Ecarts_IG` | Nom technique sans accent |<br>
+| `Direction` | `DFI` | Direction métier |<br>
+| `Département` | `GTVA` | Département |<br>
+| `Jour/homme passé` | `1.32` | Calculé : 0,002 par entité traitée |<br>
+| `Technologie` | `VBA` | En dur |<br>
+| `Statut` | `OK` / `KO` | Statut global |<br>
+| `Date/heure début` | `2025-11-13T21:00:00.000Z` | Timestamp ISO |<br>
+| `Date/heure fin` | `2025-11-13T23:30:00.000Z` | Timestamp ISO |<br>
+| `Nb occurrences lues` | `278` | Entités totales |<br>
+| `Nb occurrences traitées` | `278` | Entités réussies |<br>
+| `Nb occurrences rejetées` | `0` | Différence |<br>
+| `Nb actions` | `1500` | Nombre d’actions automatisées |<br>
+| `Environnement` | `Production` | Test / Production |<br>
