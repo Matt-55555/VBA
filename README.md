@@ -1,4 +1,4 @@
-Auteur  
+<strong>Auteur<strong/>  
 Prenom Nom : Jean-Matthieu Charre  
 Rôle : Développeur VBA senior  
 Contexte : CACIB Direction Financière - DFI / GTVA  
