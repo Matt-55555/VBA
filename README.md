@@ -10,10 +10,10 @@ Le code présenté sur GitHub a uniquement pour objectif de démontrer mes comp�
 ________________________________________
 Notes  
 Ce développement illustre ma capacité à :  
-•	concevoir des automatisations Excel robustes et compatibles RPA,  
-•	intégrer PowerQuery, des logs, des KPIs, et des gestions d’erreurs structurées,  
-•	produire un code fiable, maintenable, conforme aux standards industriels, et s’insérant dans un framework de développement entreprise,  
-•	travailler en collaboration directe avec des équipes de Business Analysts.  
+•	concevoir des automatisations Excel robustes et compatibles RPA  
+•	intégrer PowerQuery, des logs, des KPIs, et des gestions d’erreurs structurées  
+•	produire un code fiable, maintenable, conforme aux standards industriels, et s’insérant dans un framework de développement entreprise  
+•	travailler en collaboration directe avec des équipes de Business Analysts  
 <br>
 <br>
 <br>
