@@ -4,11 +4,11 @@ Rôle : Développeur VBA senior
 Contexte : CACIB Direction Financière - DFI / GTVA  
 Année : 2024  
 ________________________________________
-Licence  
+<strong>Licence</strong>  
 Projet interne CACIB Fast-IT / DFI - Reproduction interdite.  
 Le code présenté sur GitHub a uniquement pour objectif de démontrer mes compétences techniques.  
 ________________________________________
-Notes  
+<strong>Notes</strong>  
 Ce développement illustre ma capacité à :  
 •	concevoir des automatisations Excel robustes et compatibles RPA  
 •	intégrer PowerQuery, des logs, des KPIs, et des gestions d’erreurs structurées  
@@ -17,8 +17,8 @@ Ce développement illustre ma capacité à :
 <br>
 <br>
 <br>
-Développement VBA  
-Génération de l’État des Écarts Intragroupes  
+<h1>Développement VBA  
+Génération de l’État des Écarts Intragroupes</h1>  
 <br>
 <br>
 <br>
