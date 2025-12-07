@@ -12,49 +12,48 @@ ________________________________________
 Ce développement illustre ma capacité à :  
 •	concevoir des automatisations Excel robustes et compatibles RPA  
 •	intégrer PowerQuery, des logs, des KPIs, et des gestions d’erreurs structurées  
-•	produire un code fiable, maintenable, et conforme aux standards industriels
+•	produire un code fiable, maintenable, et conforme aux standards industriels  
 •	utiliser un framework de développement entreprise existant  
 •	travailler en collaboration directe avec des équipes de Business Analysts  
 <br>
 <br>
 <br>
 <h1>Développement VBA<br>
-Génération de l’État des Écarts Intragroupes</h1>  
-<br>
+Génération de l’État des Écarts Intragroupes</h1>
 <br>
 <strong>*** Technologies et normes utilisées</strong>  
 <br>
--	Excel VBA (compatible Office 32 bits et 64 bits)  
--	Requêtes PowerQuery  
--	RPA integration via CMD + fichiers d’état  
--	Logging textuel en temps réel  
--	export de données en JSON (KPI)  
--	Gestion des erreurs différenciée en fonction du mode de lancement (RPA ou manuel)
+- 	Excel VBA (compatible Office 32 bits et 64 bits)<br>
+- 	Requêtes PowerQuery<br>
+- 	Intégration RPA via CMD + fichiers d’état<br>
+- 	Logging textuel en temps réel<br>
+- 	export de données en JSON (KPI)<br>
+- 	Gestion différenciée des erreurs en fonction du mode de lancement (RPA ou manuel)</strong>
 <br>
 <br>
-** Fichiers utilisés  
+<strong>*** Fichiers utilisés</strong>
 <br>
--	« Classeur « 361 - v1.2.2.xlsm » : Classeur contenant le programme VBA
--	« Masterfile - IG v10.8.xlsx » : fichier source
+- 	Classeur Excel "361 - v1.2.2.xlsm" : classeur contenant le programme VBA<br>
+- 	Classeur "Masterfile - IG v10.8.xlsx" : fichier source<br>
 <br>
 <br>
-** Modes de lancement  
+<strong>*** Modes de lancement</strong>
 <br>
 1.	Mode RPA (automatique)
--	Lancement via `cmd.bat`
--	Aucun message à l’écran
--	Fin silencieuse, fermeture automatique de l’application et des fichiers sources
--	Logs + KPI + GO.txt + Rapport.txt générés
+- 	Lancement via "cmd.bat"
+- 	Aucun message à l’écran
+- 	Fin silencieuse : fermeture propre et automatique de l’application et du fichier source (même en cas de bugs - car application tourne sur une VDI)
+- 	Logs + KPI + GO.txt + Rapport.txt générés
 
 2.	Mode manuel
--	Lancement par clic sur bouton Excel
--	Si erreur dans le traitement, MsgBox affichant le type d’erreur
--	MsgBox de fin de traitement affichée
+- 	Lancement par clic sur bouton Excel
+- 	Si erreur dans le traitement, MsgBox affichant le type d’erreur
+- 	En fin de programme, MsgBox de fin de traitement (l'application reste ouverte ainsi que le fichier source)
 <br>
 <br>
 A)	Contexte et objectif
 <br>
-Ce développement VBA/Excel vise à automatiser la génération de fichiers d’écarts intragroupes (environ 280 fichiers en output) pour le département DFI / GTVA à partir de données issues du process GTVA.  
+Ce développement VBA/Excel vise à automatiser la génération de fichiers d’écarts intragroupes (environ 280 classeurs Excel à générer) pour le département DFI / GTVA à partir de données issues du process GTVA.  
 Le traitement, historiquement manuel et chronophage, a été entièrement automatisé pour être exécuté en autonomie par un robot RPA (sans intervention humaine).
 <br>
 <br>
@@ -62,38 +61,20 @@ Le traitement, historiquement manuel et chronophage, a été entièrement automa
 B)	Architecture du process
 <br>
 <br>
-1.	Le robot RPA crée un fichier vide ‘GO.txt’ et lance un script ’cmd.bat’,
-2.	Le script démarre Excel + le programme VBA (procédure "Sub_Main" localisée dans le Module "PROCESS_MAIN" du Classeur "361 - v1.2.2.xlsm" (classeur contenant le programme principal))
-3.	La procédure "Sub_Main" appelle de manière séquentielle des procédures secondaires
-
-4.	
-3.1.	Vérifie l'eixstence de l'ensemble des paramètres necessaires au bon fonctionnement du programme (chemins de fichiers, feuilles spécifiques dans les classeurs, tableaux structurés, variables, etc)   
-3.2.	Crée le dossier qui récupère les fichiers en outputs du programme
-3.3.	Sélectionne les entités à traiter dans l’onglet "Déclarants" du Classeur "Masterfile - IG v10.8 - ORIGINAL.xlsm" (classeur en input du programme)
-3.4.	Lance la ,
-3.5.	Crée le rapport d’exécution (‘Rapport.txt’),
-3.6.	Renseigne le fichier ‘GO.txt’  avec le statut final (‘OK’ ou ‘KO’, signifiant le bon déroulement ou pas jusqu’à la fin du programme).
-3.7.	Le robot lit le contenu du fichier ‘GO.txt’ envoie un rapport par e-mail et clôture le traitement.
+1.	Le robot RPA crée un fichier vide "GO.txt" et lance un script "cmd.bat"
+2.	Le script ouvre l'application Excel, et une procédure évènementielle dans l'application lance le programme VBA (procédure "Sub_Main" du Module "PROCESS_MAIN" du Classeur "361 - v1.2.2.xlsm")
+3.	La procédure "Sub_Main" appelle de manière séquentielle des procédures secondaires pour réaliser les traitements nécessaires sur les données
+•	Vérification de l'ensemble des paramètres necessaires au bon fonctionnement du programme (fichiers, dossiers, worksheets, tableaux structurés, colonnes de tableaux, variables, etc)   
+•	Paramétrage des entités intragroupe à traiter
+•	Lancement des requêtes Power Query
+•	Création du rapport d’exécution ("Rapport.txt")
+•	Envoi des KPIs
+•	Renseignement du fichier "GO.txt" avec le statut final (‘OK’ ou ‘KO’ signifiant le bon déroulement ou pas jusqu’à la fin du programme)
+•	Le robot lit le contenu du fichier ‘GO.txt’ et envoie un rapport par e-mail et clôture le traitement.
 <br>
 <br>
 <br>
-C)	Fonctionnalités principales
-<br>
-<br>
--	Exécution autonome : Lancement par `cmd.bat` sans message ni interaction utilisateur,<br>
--	Compatibilité RPA : Gestion des erreurs, logs, KPI et fichiers d’état normalisés,<br>
--	Vérification préliminaire : Contrôle de la présence des onglets, plages nommées, dossiers et fichiers sources,<br>
--	Création du dossier du jour : Génération automatique d’un répertoire daté (`AA.MM.JJ`) selon le modèle paramétré dans Central/Prm_ModeleDestination,<br>
--	Paramétrage automatique des entités : Renseignement automatique d’un “X” dans la colonne A du tableau `Déclarants_IG`,<br>
--	Lancement du process métier : Exécution de la procédure `Export`, responsable de la création des fichiers par entité,<br>
--	Logs détaillés : Journalisation temps réel des actions dans `.\Log\YYYYMMDD_HHMM.txt`,<br>
--	Rapport d’exécution : Génération de `Rapport.txt` résumant le résultat global du traitement,<br>
--	Fichier d’état GO.txt : Statut `OK` ou `KO` en fin d’exécution, lu par le robot pour poursuivre ou interrompre le flux,<br>
--	KPI Fast-IT : Génération d’un fichier JSON contenant les métriques du traitement (durée, statut, entités, etc.).<br>
-<br>
-<br>
-<br>
-D)	Détails du fonctionnement
+C)	Détails du fonctionnement
 <br>
 <br>
 1)	Vérification des sources<br>
