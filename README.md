@@ -11,7 +11,7 @@ ________________________________________
 <strong>Notes</strong>  
 Ce développement illustre ma capacité à :  
 •	concevoir des automatisations Excel robustes et compatibles RPA  
-•	intégrer des logs détaillés, des KPIs de fin de traitement, et des gestions d’erreurs structurées et différenciées
+•	intégrer des logs détaillés, des KPIs de fin de traitement, et des gestions d’erreurs structurées et différenciées  
 •	produire un code fiable, maintenable, et conforme aux standards industriels  
 •	utiliser un framework de développement entreprise existant  
 <br>
