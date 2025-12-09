@@ -41,13 +41,14 @@ Génération de l’État des Écarts Intragroupes</h1>
 <br>
 1.	Mode RPA (automatique)<br>
 - 	Lancement via "cmd.bat"<br>
-- 	Aucun message à l’écran<br>
+-   Gestion des erreurs silencieuse et fermeture propre de l'application en fin de programme (car le programme tourne sur une VDI - Desktop virtuel sur un serveur)<br>
+- 	Le programme tourne sur une VDI (desktop sur un serveur), Aucun message à l’écran<br>
 - 	Fin silencieuse : fermeture propre et automatique de l’application et du fichier source (même en cas de bugs - car application tourne sur une VDI)<br>
 - 	Logs + KPI + GO.txt + Rapport.txt générés<br>
 2.	Mode manuel<br>
 - 	Lancement par clic sur bouton Excel<br>
-- 	Si erreur dans le traitement, MsgBox affichant le type d’erreur<br>
-- 	En fin de programme, MsgBox de fin de traitement (l'application reste ouverte ainsi que le fichier source)<br>
+- 	Si erreur dans le traitement, une MsgBox apparaît et informe l'utilisateur sur le type d'erreur et sur la démarche à suivre<br>
+- 	En fin de programme, une MsgBox informe l'utilisateur de la fin du traitement (l'application reste ouverte ainsi que le fichier source)<br>
 <br>
 <br>
 <strong>A)	Contexte et objectif</strong>
