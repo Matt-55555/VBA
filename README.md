@@ -17,7 +17,6 @@ Ce développement illustre ma capacité à :
 •	travailler en collaboration directe avec des équipes de Business Analysts  
 <br>
 <br>
-<br>
 <h1>Développement VBA<br>
 Génération de l’État des Écarts Intragroupes</h1>
 <br>
