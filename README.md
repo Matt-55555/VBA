@@ -37,14 +37,11 @@ Génération de l’État des Écarts Intragroupes</h1>
 - 	Classeur "Masterfile - IG v10.8.xlsx" : fichier en input<br>
 <br>
 <br>
-<strong>*** Modes de lancement</strong>
+<strong>*** Modes de lancement et spécificités</strong>
 <br>
 1.	Mode RPA (automatique)<br>
 - 	Lancement via "cmd.bat"<br>
--   Gestion des erreurs silencieuse et fermeture propre de l'application en fin de programme (car le programme tourne sur une VDI - Desktop virtuel sur un serveur)<br>
-- 	Le programme tourne sur une VDI (desktop sur un serveur), Aucun message à l’écran<br>
-- 	Fin silencieuse : fermeture propre et automatique de l’application et du fichier source (même en cas de bugs - car application tourne sur une VDI)<br>
-- 	Logs + KPI + GO.txt + Rapport.txt générés<br>
+-   Gestion des erreurs silencieuse et fermeture propre de l'application en fin de programme — même en cas de bug, car le programme tourne sur une VDI et aucune personne physique ne peut intergair avec l'application<br>
 2.	Mode manuel<br>
 - 	Lancement par clic sur bouton Excel<br>
 - 	Si erreur dans le traitement, une MsgBox apparaît et informe l'utilisateur sur le type d'erreur et sur la démarche à suivre<br>
