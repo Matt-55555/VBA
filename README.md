@@ -28,7 +28,7 @@ Génération de l’État des Écarts Intragroupes</h1>
 - 	Intégration RPA via CMD + fichiers d’état<br>
 - 	Logging textuel en temps réel<br>
 - 	export de données en JSON (KPI)<br>
-- 	Gestion différenciée des erreurs en fonction du mode de lancement (RPA ou manuel)</strong>
+- 	Gestion différenciée des erreurs en fonction du mode de lancement
 <br>
 <br>
 <strong>*** Fichiers utilisés</strong>
