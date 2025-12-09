@@ -61,7 +61,7 @@ Le traitement, historiquement manuel et chronophage, a été entièrement automa
 <br>
 1.	Le robot RPA crée un fichier vide "GO.txt" et lance un script "cmd.bat"<br>
 2.	Le script ouvre l'application Excel, et une procédure évènementielle lance le programme principal (procédure "Sub_Main" du Module "PROCESS_MAIN" du Classeur "361 - v1.2.2.xlsm")<br>
-3.	Ensuite, la procédure "Sub_Main" appelle de manière séquentielle une série de procédures secondaires afin de réaliser les traitements nécessaires sur les données<br>
+3.	Ensuite, la procédure "Sub_Main" appelle de manière séquentielle une série de procédures secondaires afin de réaliser les traitements nécessaires sur les données
 <br>
 <br>
 <br>
