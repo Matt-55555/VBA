@@ -11,7 +11,7 @@ ________________________________________
 <strong>Notes</strong>  
 Ce développement illustre ma capacité à :  
 •	concevoir des automatisations Excel robustes et compatibles RPA  
-•	intégrer PowerQuery, des logs, des KPIs, et des gestions d’erreurs structurées  
+•	intégrer des requêtes PowerQuery, des logs détaillés, des KPIs de fin de traitement, et des gestions d’erreurs structurées  
 •	produire un code fiable, maintenable, et conforme aux standards industriels  
 •	utiliser un framework de développement entreprise existant  
 •	travailler en collaboration directe avec des équipes de Business Analysts  
