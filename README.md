@@ -60,9 +60,9 @@ Le traitement, historiquement manuel et chronophage, a été entièrement automa
 <br>
 <br>
 1.	Le robot RPA crée un fichier vide "GO.txt" et lance un script "cmd.bat"<br>
-2.	Le script ouvre l'application Excel, et une procédure évènementielle dans l'application lance le programme VBA (procédure "Sub_Main" du Module "PROCESS_MAIN" du Classeur "361 - v1.2.2.xlsm")<br>
-3.	La procédure "Sub_Main" appelle de manière séquentielle des procédures secondaires pour réaliser les traitements nécessaires sur les données :<br>
-• Vérification de l'ensemble des paramètres necessaires au bon fonctionnement du programme (fichiers, dossiers, worksheets, tableaux structurés, colonnes de tableaux, variables, etc)<br>
+2.	Le script ouvre l'application Excel, et une procédure évènementielle lance le programme principal (procédure "Sub_Main" du Module "PROCESS_MAIN" du Classeur "361 - v1.2.2.xlsm")<br>
+3.	Ensuite, la procédure "Sub_Main" appelle de manière séquentielle une série de procédures secondaires afin de réaliser les traitements nécessaires sur les données :<br>
+• Procédure pré-traitement d'initialisation de variables et de vérification de paramètres nécessaires pour le bon déroulement du programme<br>
 •	Paramétrage des entités intragroupe à traiter<br>
 •	Lancement des requêtes Power Query<br>
 •	Création du rapport d’exécution ("Rapport.txt")<br>
