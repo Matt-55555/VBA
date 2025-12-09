@@ -33,7 +33,7 @@ Génération de l’État des Écarts Intragroupes</h1>
 <br>
 <strong>*** Fichiers utilisés</strong>
 <br>
-- 	Classeur Excel "361 - v1.2.2.xlsm" : classeur contenant le programme VBA<br>
+- 	Classeur Excel "361 - v1.2.2.xlsm" : application contenant le programme VBA<br>
 - 	Classeur "Masterfile - IG v10.8.xlsx" : fichier source<br>
 <br>
 <br>
