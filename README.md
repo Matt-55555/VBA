@@ -66,8 +66,8 @@ Le programme VBA s’appuie sur une architecture modulaire segmentée, organisé
 <strong>C)	Worflow d'exécution du programme</strong>
 <br>
 <br>
-1) Initialisation et préparation du contexte
-
+&nbsp;&nbsp;1. Initialisation et préparation du contexte
+<br>
 À l’exécution, le processus est lancé par la procédure Main, qui initialise le contexte applicatif via Init, active le mode de gestion des erreurs centralisé et journalise l’amorçage du workflow dans le système de logging interne (ALGOLOG). Cette phase prépare les variables globales, configure le mode automatique éventuel et établit la séquence d’appel des modules métier.
 
 Le module InitialisationGlobales est ensuite appelé : il récupère l’ensemble des paramètres dynamiques nécessaires au traitement (chemins des fichiers sources, onglets requis, tableaux structurés obligatoires, plages nommées, répertoires d’entrée et de sortie, métadonnées KPI, etc.). Cette étape construit le runtime context du programme et initialise les compteurs opérationnels ainsi que la configuration KPI via KPI_CONFIG.
@@ -169,35 +169,6 @@ un fail-safe shutdown conforme aux standards de production VBA/BFI
 
 8) Structure des KPIs
 
-Un fichier JSON est généré à la fin du traitement avec des indicateurs clés sur le process réalisé :
-
-Clé	Exemple	Description
-Code process	361	Identifiant principal
-Sous code process	361-2	Numéro de lot
-Nom du process	GTVA_Generation_Ecarts_IG	Nom technique sans accent
-Direction	DFI	Direction métier
-Département	GTVA	Département
-Jour/homme passé	1.32	Calculé : 0,002 par entité traitée
-Technologie	VBA	En dur
-Statut	OK / KO	Statut global
-Date/heure début	2025-11-13T21:00:00.000Z	Timestamp ISO
-Date/heure fin	2025-11-13T23:30:00.000Z	Timestamp ISO
-Nb occurrences lues	278	Entités totales
-Nb occurrences traitées	278	Entités réussies
-Nb occurrences rejetées	0	Différence
-Nb actions	1500	Nombre d’actions automatisées
-Environnement	Production	Test / Production
-
-
-
-<br>
-<br>
-<br>
-
-
-
-8) Structure des KPIs
-<br>
 Un fichier JSON est généré à la fin du traitement avec des indicateurs clefs sur le process réalisé :
 <br>
 | Clé | Exemple | Description |<br>
