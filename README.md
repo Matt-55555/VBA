@@ -66,7 +66,7 @@ Le programme VBA s’appuie sur une architecture modulaire segmentée, organisé
 <strong>C)	Worflow d'exécution du programme</strong>
 <br>
 <br>
-1) Initialisation et préparation du contexte  
+1) Initialisation et préparation du contexte
 
 À l’exécution, le processus est lancé par la procédure Main, qui initialise le contexte applicatif via Init, active le mode de gestion des erreurs centralisé et journalise l’amorçage du workflow dans le système de logging interne (ALGOLOG). Cette phase prépare les variables globales, configure le mode automatique éventuel et établit la séquence d’appel des modules métier.
 
@@ -95,8 +95,8 @@ En cas d’erreur, les anomalies sont consolidées dans le rapport et entraînen
 
 3) Génération du répertoire journalier
 
-Une fois l’environnement validé, le module CréationDossierJour génère le répertoire d’exécution du jour à partir d’un chemin modèle contenant des jetons dynamiques (AA/MM/JJ).
-Le système substitue ces jetons par la date courante, normalise le chemin final, puis crée le dossier s’il n’existe pas. Ce répertoire deviendra l’emplacement de sortie de l’ensemble des fichiers générés.
+Une fois l’environnement validé, le module CréationDossierJour génère le répertoire d’exécution du jour à partir d’un chemin modèle contenant des jetons dynamiques (AA/MM/JJ). Le système substitue ces jetons par la date courante, normalise le chemin final, puis crée le dossier s’il n’existe pas.
+Ce répertoire deviendra l’emplacement de sortie de l’ensemble des fichiers générés.
 
 4) Préparation des entités à traiter
 
@@ -147,7 +147,7 @@ ferme proprement l’application Excel
 
 Cette phase garantit une termination propre de l’ensemble du processus.
 
-7) Gestion d'erreurs et arrêt sécurisé
+7) Gestion d’erreurs et arrêt sécurisé
 
 En cas d’exception (anomalie métier, erreur PowerQuery, chemin manquant, structure non conforme…), les modules :
 
@@ -155,8 +155,7 @@ End_Clean_OnError
 
 End_Clean_OnError_Connection
 
-prennent automatiquement le relais.
-Ils assurent :
+prennent automatiquement le relais. Ils assurent :
 
 la mise à jour du statut final en KO
 
@@ -167,8 +166,37 @@ la fermeture sécurisée des fichiers
 la préservation de l’intégrité du classeur et des sources
 
 un fail-safe shutdown conforme aux standards de production VBA/BFI
+
+8) Structure des KPIs
+
+Un fichier JSON est généré à la fin du traitement avec des indicateurs clés sur le process réalisé :
+
+Clé	Exemple	Description
+Code process	361	Identifiant principal
+Sous code process	361-2	Numéro de lot
+Nom du process	GTVA_Generation_Ecarts_IG	Nom technique sans accent
+Direction	DFI	Direction métier
+Département	GTVA	Département
+Jour/homme passé	1.32	Calculé : 0,002 par entité traitée
+Technologie	VBA	En dur
+Statut	OK / KO	Statut global
+Date/heure début	2025-11-13T21:00:00.000Z	Timestamp ISO
+Date/heure fin	2025-11-13T23:30:00.000Z	Timestamp ISO
+Nb occurrences lues	278	Entités totales
+Nb occurrences traitées	278	Entités réussies
+Nb occurrences rejetées	0	Différence
+Nb actions	1500	Nombre d’actions automatisées
+Environnement	Production	Test / Production
+
+
+
 <br>
-8)	Structure des KPIs
+<br>
+<br>
+
+
+
+8) Structure des KPIs
 <br>
 Un fichier JSON est généré à la fin du traitement avec des indicateurs clefs sur le process réalisé :
 <br>
