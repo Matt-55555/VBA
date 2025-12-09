@@ -68,6 +68,7 @@ Le programme VBA s’appuie sur une architecture modulaire segmentée, organisé
 <br>
 &nbsp;&nbsp;1. Initialisation et préparation du contexte
 <br>
+<br>
 À l’exécution, le processus est lancé par la procédure Main, qui initialise le contexte applicatif via Init, active le mode de gestion des erreurs centralisé et journalise l’amorçage du workflow dans le système de logging interne (ALGOLOG). Cette phase prépare les variables globales, configure le mode automatique éventuel et établit la séquence d’appel des modules métier.
 
 Le module InitialisationGlobales est ensuite appelé : il récupère l’ensemble des paramètres dynamiques nécessaires au traitement (chemins des fichiers sources, onglets requis, tableaux structurés obligatoires, plages nommées, répertoires d’entrée et de sortie, métadonnées KPI, etc.). Cette étape construit le runtime context du programme et initialise les compteurs opérationnels ainsi que la configuration KPI via KPI_CONFIG.
@@ -75,19 +76,12 @@ Le module InitialisationGlobales est ensuite appelé : il récupère l’ensembl
 2) Création du rapport et vérification de l’environnement
 
 Le module CreateRapport supprime puis recrée le fichier Rapport.txt, garantissant un espace de log propre pour la session d’exécution courante.
-
 Le module VérificationsPréalables réalise ensuite un pipeline complet de validation de l’environnement. Il contrôle :
-
 l’existence des fichiers essentiels (Masterfile, GO.txt, Rapport.txt)
-
 la présence des onglets requis
-
 la disponibilité des tableaux structurés attendus
-
 la cohérence des plages nommées
-
 la validité des répertoires spécifiés dans les paramètres
-
 la présence des fichiers obligatoires dans chaque dossier source
 
 L’ensemble repose sur une série de sous-modules spécialisés (VérifFichiers, VérifOnglets, VérifTableauxStructurés, VérifPlagesNommées, VérifExistenceFichiers, VérifExistenceRépertoires), orchestrés par le framework interne (REPORT_PROCESS_INIT_VERIF_*).
@@ -106,65 +100,39 @@ L’opération n’altère pas la structure du tableau, mais prépare une liste 
 5) Phase d’export métier (boucle principale)
 
 Le module Export constitue le cœur opérationnel du processus. Il commence par :
-
 déterminer le nombre d’entités à traiter
-
 alimenter les KPIs correspondants
-
 masquer les feuilles non essentielles pour sécuriser l’environnement d’exécution
-
 Pour chaque entité marquée :
-
 la feuille Entité est renseignée avec les paramètres correspondants
-
 les 6 connexions PowerQuery critiques (Membre, Imports, Final, Réponses, Rejets, Clé_de_lettrage) sont rafraîchies séquentiellement
-
 les données intermédiaires du tableau Imports sont supprimées
-
 les colonnes calculées problématiques (Assistant_Lettrage, Statut_Final) sont reconstruites pour garantir la cohérence métier
-
 l’ensemble des caches pivots du classeur est régénéré
-
 le fichier final est produit dans le répertoire journalier via SaveCopyAs, incluant le nom de l’entité dans son intitulé
-
 Chaque rafraîchissement PowerQuery est chronométré et sécurisé : en cas d’erreur sur une connexion, un module dédié (End_Clean_OnError_Connection) interrompt immédiatement le processus et journalise l’anomalie.
 
 6) Clôture contrôlée (End_Clean)
 
 À l’issue de la boucle :
-
 End_Clean consolide et transmet les KPIs
-
 sauvegarde le classeur maître
-
 met à jour Rapport.txt
-
 écrit le statut final OK dans GO.txt
-
 journalise la durée totale du traitement
-
 ferme proprement l’application Excel
-
 Cette phase garantit une termination propre de l’ensemble du processus.
 
 7) Gestion d’erreurs et arrêt sécurisé
 
 En cas d’exception (anomalie métier, erreur PowerQuery, chemin manquant, structure non conforme…), les modules :
-
 End_Clean_OnError
-
 End_Clean_OnError_Connection
-
 prennent automatiquement le relais. Ils assurent :
-
 la mise à jour du statut final en KO
-
 la journalisation complète de l’erreur
-
 la fermeture sécurisée des fichiers
-
 la préservation de l’intégrité du classeur et des sources
-
 un fail-safe shutdown conforme aux standards de production VBA/BFI
 
 8) Structure des KPIs
