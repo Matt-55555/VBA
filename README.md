@@ -59,9 +59,10 @@ Le traitement, historiquement manuel et chronophage, a été entièrement automa
 <strong>B)	Architecture du process</strong>
 <br>
 <br>
-1.	Le robot RPA crée un fichier vide "GO.txt" et lance un script "cmd.bat"<br>
-2.	Le script ouvre l'application Excel, et une procédure évènementielle lance le programme principal (procédure "Sub_Main" du Module "PROCESS_MAIN" du Classeur "361 - v1.2.2.xlsm")<br>
-3.	Ensuite, la procédure "Sub_Main" appelle de manière séquentielle une série de procédures secondaires afin de réaliser les traitements nécessaires sur les données
+Le programme VBA s’appuie sur une architecture modulaire clairement segmentée, organisée autour d’un point d’entrée unique (Main) qui pilote l’ensemble du workflow applicatif et coordonne les différentes étapes du traitement. Le code s’intègre dans un framework VBA interne fournissant des services transverses essentiels : gestion centralisée des erreurs (ErrorManagment), journalisation structurée (ALGOLOG), alimentation et diffusion des indicateurs de suivi (KPIs), ainsi qu’un ensemble d’outils permettant d’abstraire les opérations de manipulation de fichiers, de dossiers et d’objets Excel (paramètres configurables, tableaux structurés, plages nommées, modules de vérification, etc.). Chaque responsabilité fonctionnelle est encapsulée dans un module dédié : initialisation du contexte et des variables globales (InitialisationGlobales), création et remise à zéro du fichier de rapport (CreateRapport), vérification de la complétude et de la cohérence des sources (VérificationsPréalables), génération du répertoire d’exécution journalier (CréationDossierJour), configuration des entités à traiter (ParamétrageEntités), puis traitement métier orchestré par une boucle contrôlant l’onglet Déclarants et réalisant les rafraîchissements PowerQuery, nettoyages intermédiaires et exports finalisés (Export). Enfin, les modules de clôture (End_Clean et End_Clean_OnError) garantissent une terminaison propre du processus, la mise à jour des KPIs ainsi que la production du statut final (OK ou KO). Cette organisation modulaire assure une séparation nette des responsabilités, une meilleure maintenabilité et une fiabilité conforme aux exigences d’un environnement VBA professionnel.
+
+
+
 <br>
 <br>
 <br>
