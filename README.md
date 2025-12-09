@@ -6,7 +6,7 @@ Année 2024
 ________________________________________
 <strong>Licence</strong>  
 Projet interne CACIB Fast-IT / DFI - Reproduction interdite.  
-Le code présenté sur GitHub a uniquement pour objectif de démontrer mes compétences techniques.  
+Le code présenté sur GitHub a uniquement pour objectif de présenter mes compétences techniques.  
 ________________________________________
 <strong>Notes</strong>  
 Ce développement illustre ma capacité à :  
