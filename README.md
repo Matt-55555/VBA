@@ -66,7 +66,7 @@ Le programme VBA s’appuie sur une architecture modulaire segmentée, organisé
 <strong>C)	Worflow d'exécution du programme</strong>
 <br>
 <br>
-1) Initialisation et préparation du contexte
+1) Initialisation et préparation du contexte  
 
 À l’exécution, le processus est lancé par la procédure Main, qui initialise le contexte applicatif via Init, active le mode de gestion des erreurs centralisé et journalise l’amorçage du workflow dans le système de logging interne (ALGOLOG). Cette phase prépare les variables globales, configure le mode automatique éventuel et établit la séquence d’appel des modules métier.
 
