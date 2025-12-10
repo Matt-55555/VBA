@@ -85,13 +85,13 @@ Une fois l’environnement validé, le module "CréationDossierJour" génère le
 Le module "ParamétrageEntités" prépare le périmètre de traitement en marquant par un « X » l’ensemble des lignes du tableau structuré "Déclarants_IG".
 L’opération n’altère pas la structure du tableau, mais prépare une liste de travail parfaitement déterministe pour le module d’export.
 
-<strong>&nbsp;&nbsp;5. Phase d’export métier (boucle principale)</strong>
+<strong>&nbsp;&nbsp;5. Phase d’export métier</strong>
 
 Le module "Export" constitue le cœur opérationnel du processus. Il commence par déterminer le nombre d’entités à traiter, à alimenter les KPIs correspondants, puis à masquer les feuilles non essentielles pour sécuriser l’environnement d’exécution.
 <br>
 Pour chaque entité marquée, la feuille "Entité" est renseignée avec les paramètres correspondants, les 6 connexions PowerQuery critiques ("Membre", "Imports", "Final", "Réponses", "Rejets", "Clé_de_lettrage") sont rafraîchies séquentiellement avec un processus asynchrone, les données intermédiaires du tableau "Imports" sont supprimées, les colonnes calculées problématiques ("Assistant_Lettrage" et "Statut_Final") sont reconstruites pour garantir la cohérence métier, l’ensemble des caches pivots du classeur est régénéré, le fichier final est produit dans le répertoire journalier en incluant le nom de l’entité dans son intitulé. Chaque rafraîchissement PowerQuery est chronométré et sécurisé : en cas d’erreur sur une connexion un module dédié ("End_Clean_OnError_Connection") interrompt immédiatement le processus et journalise l’anomalie.
 
-<strong>&nbsp;&nbsp;6. Clôture contrôlée (End_Clean)</strong>
+<strong>&nbsp;&nbsp;6. Clôture contrôlée</strong>
 
 À l’issue de la boucle :
 La procédure "End_Clean" consolide et transmet les KPIs, sauvegarde le classeur maître, met à jour le fichier "Rapport.txt", écrit le statut final "OK" dans le fichier d'état "GO.txt" faisant le lien entre le process VBA et l'automatisation RPA, journalise la durée totale du traitement, ferme proprement l’application Excel et le fichier source. Cette phase garantit une clôture propre de l’ensemble du processus.
