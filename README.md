@@ -49,7 +49,7 @@ Génération de l’État des Écarts Intragroupes</h1>
 <strong>A)	Contexte et objectif</strong>
 <br>
 <br>
-Ce développement VBA/Excel vise à automatiser la génération de fichiers d’écarts intragroupes (environ 280 classeurs à générer) pour le département DFI / GTVA à partir de données issues du process GTVA.  
+Ce développement VBA/Excel vise à automatiser la génération de fichiers d’écarts intragroupes (environ 280 classeurs en output) pour le département DFI / GTVA à partir de données issues du process GTVA.  
 Le traitement, historiquement manuel et chronophage, a été entièrement automatisé pour être exécuté en autonomie par un robot RPA.
 <br>
 <br>
