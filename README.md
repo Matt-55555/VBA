@@ -87,29 +87,14 @@ L’opération n’altère pas la structure du tableau, mais prépare une liste 
 
 <strong>&nbsp;&nbsp;5. Phase d’export métier (boucle principale)</strong>
 
-Le module "Export" constitue le cœur opérationnel du processus. Il commence par :
-déterminer le nombre d’entités à traiter
-alimenter les KPIs correspondants
-masquer les feuilles non essentielles pour sécuriser l’environnement d’exécution
-Pour chaque entité marquée :
-la feuille "Entité" est renseignée avec les paramètres correspondants
-les 6 connexions PowerQuery critiques ("Membre", "Imports", "Final", "Réponses", "Rejets", "Clé_de_lettrage") sont rafraîchies séquentiellement avec un processus asynchrone
-les données intermédiaires du tableau "Imports" sont supprimées
-les colonnes calculées problématiques ("Assistant_Lettrage" et "Statut_Final") sont reconstruites pour garantir la cohérence métier
-l’ensemble des caches pivots du classeur est régénéré
-le fichier final est produit dans le répertoire journalier en incluant le nom de l’entité dans son intitulé
-Chaque rafraîchissement PowerQuery est chronométré et sécurisé : en cas d’erreur sur une connexion, un module dédié ("End_Clean_OnError_Connection") interrompt immédiatement le processus et journalise l’anomalie.
+Le module "Export" constitue le cœur opérationnel du processus. Il commence par déterminer le nombre d’entités à traiter, à alimenter les KPIs correspondants, puis à masquer les feuilles non essentielles pour sécuriser l’environnement d’exécution.
+<br>
+Pour chaque entité marquée, la feuille "Entité" est renseignée avec les paramètres correspondants, les 6 connexions PowerQuery critiques ("Membre", "Imports", "Final", "Réponses", "Rejets", "Clé_de_lettrage") sont rafraîchies séquentiellement avec un processus asynchrone, les données intermédiaires du tableau "Imports" sont supprimées, les colonnes calculées problématiques ("Assistant_Lettrage" et "Statut_Final") sont reconstruites pour garantir la cohérence métier, l’ensemble des caches pivots du classeur est régénéré, le fichier final est produit dans le répertoire journalier en incluant le nom de l’entité dans son intitulé. Chaque rafraîchissement PowerQuery est chronométré et sécurisé : en cas d’erreur sur une connexion un module dédié ("End_Clean_OnError_Connection") interrompt immédiatement le processus et journalise l’anomalie.
 
 <strong>&nbsp;&nbsp;6. Clôture contrôlée (End_Clean)</strong>
 
 À l’issue de la boucle :
-"End_Clean" consolide et transmet les KPIs
-sauvegarde le classeur maître
-met à jour "Rapport.txt"
-écrit le statut final "OK" dans le fichier d'état "GO.txt" faisant le lien entre le process VBA et l'automatisation RPA
-journalise la durée totale du traitement
-ferme proprement l’application Excel
-Cette phase garantit une termination propre de l’ensemble du processus.
+La procédure "End_Clean" consolide et transmet les KPIs, sauvegarde le classeur maître, met à jour le fichier "Rapport.txt", écrit le statut final "OK" dans le fichier d'état "GO.txt" faisant le lien entre le process VBA et l'automatisation RPA, journalise la durée totale du traitement, ferme proprement l’application Excel et le fichier source. Cette phase garantit une clôture propre de l’ensemble du processus.
 
 <strong>&nbsp;&nbsp;7. Gestion d’erreurs et arrêt sécurisé</strong>
 
