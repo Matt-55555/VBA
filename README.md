@@ -40,7 +40,7 @@ Génération de l’État des Écarts Intragroupes</h1>
 -   Gestion des erreurs silencieuse et fermeture propre de l'application en fin de programme (notamment en cas de bug car le programme tourne sur une VDI et aucune personne physique ne peut interagir avec l'application)<br>
 2.	Mode manuel<br>
 - 	Lancement par clic sur bouton Excel<br>
-- 	Si erreur dans le traitement, une MsgBox apparaît et informe l'utilisateur sur le type d'erreur et la démarche à suivre<br>
+- 	Si erreur dans le traitement, une MsgBox apparaît et informe l'utilisateur sur le type d'erreur rencontré et sur la démarche à suivre<br>
 - 	En fin de programme, une MsgBox informe l'utilisateur de la fin du traitement<br>
 <br>
 <br>
