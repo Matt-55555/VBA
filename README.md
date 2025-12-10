@@ -27,11 +27,11 @@ Génération de l’État des Écarts Intragroupes</h1>
 - 	export de données en JSON (KPI)<br>
 - 	Gestion différenciée des erreurs en fonction du mode de lancement
 <br>
+<br>
 <strong>*** Fichiers utilisés</strong>
 <br>
 - 	Classeur Excel "361 - v1.2.2.xlsm" : application contenant le programme VBA<br>
 - 	Classeur "Masterfile - IG v10.8.xlsx" : fichier en input<br>
-<br>
 <br>
 <strong>*** Modes de lancement et spécificités</strong>
 <br>
