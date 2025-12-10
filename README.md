@@ -71,7 +71,7 @@ Le programme VBA s’appuie sur une architecture modulaire segmentée, organisé
 
 Le module "InitialisationGlobales" est ensuite appelé : il récupère l’ensemble des paramètres dynamiques nécessaires au traitement (chemins des fichiers sources, onglets requis, tableaux structurés obligatoires, plages nommées, répertoires d’entrée et de sortie, métadonnées KPI, etc.). Cette étape construit le contexte d'exécution du programme et initialise les compteurs opérationnels ainsi que la configuration KPI via "KPI_CONFIG".
 
-<strong>2) Création du rapport et vérification de l’environnement</strong>
+<strong>&nbsp;&nbsp;2. Création du rapport et vérification de l’environnement</strong>
 
 Le module "CreateRapport" supprime puis recrée le fichier "Rapport.txt", garantissant un espace de log propre pour la session d’exécution courante.
 Le module "VérificationsPréalables" réalise ensuite un pipeline complet de validation de l’environnement. Il contrôle :
@@ -84,16 +84,16 @@ la présence des fichiers obligatoires dans chaque dossier source
 
 L’ensemble repose sur une série de sous-modules spécialisés ("VérifFichiers", "VérifOnglets", "VérifTableauxStructurés", "VérifPlagesNommées", "VérifExistenceFichiers", "VérifExistenceRépertoires") articulés de façon à garantir un enchaînement fiable et logique des opérations de vérification. En cas d’erreur, les anomalies sont consolidées dans le rapport et entraînent une interruption contrôlée du processus.
 
-<strong>3) Génération du répertoire journalier</strong>
+<strong>&nbsp;&nbsp;3. Génération du répertoire journalier</strong>
 
 Une fois l’environnement validé, le module "CréationDossierJour" génère le répertoire d’exécution du jour à partir d’un chemin modèle contenant des jetons dynamiques (AA/MM/JJ). Le système substitue ces jetons par la date courante, normalise le chemin final, puis crée le dossier s’il n’existe pas. Ce répertoire deviendra l’emplacement de sortie de l’ensemble des fichiers générés.
 
-<strong>4) Préparation des entités à traiter</strong>
+<strong>&nbsp;&nbsp;4. Préparation des entités à traiter</strong>
 
 Le module "ParamétrageEntités" prépare le périmètre de traitement en marquant par un « X » l’ensemble des lignes du tableau structuré "Déclarants_IG".
 L’opération n’altère pas la structure du tableau, mais prépare une liste de travail parfaitement déterministe pour le module d’export.
 
-<strong>5) Phase d’export métier (boucle principale)</strong>
+<strong>&nbsp;&nbsp;5. Phase d’export métier (boucle principale)</strong>
 
 Le module "Export" constitue le cœur opérationnel du processus. Il commence par :
 déterminer le nombre d’entités à traiter
@@ -108,7 +108,7 @@ l’ensemble des caches pivots du classeur est régénéré
 le fichier final est produit dans le répertoire journalier en incluant le nom de l’entité dans son intitulé
 Chaque rafraîchissement PowerQuery est chronométré et sécurisé : en cas d’erreur sur une connexion, un module dédié ("End_Clean_OnError_Connection") interrompt immédiatement le processus et journalise l’anomalie.
 
-<strong>6) Clôture contrôlée (End_Clean)</strong>
+<strong>&nbsp;&nbsp;6. Clôture contrôlée (End_Clean)</strong>
 
 À l’issue de la boucle :
 "End_Clean" consolide et transmet les KPIs
@@ -119,7 +119,7 @@ journalise la durée totale du traitement
 ferme proprement l’application Excel
 Cette phase garantit une termination propre de l’ensemble du processus.
 
-<strong>7) Gestion d’erreurs et arrêt sécurisé</strong>
+<strong>&nbsp;&nbsp;7. Gestion d’erreurs et arrêt sécurisé</strong>
 
 En cas d’exception (anomalie métier, erreur PowerQuery, chemin manquant, structure non conforme…), les modules :
 "End_Clean_OnError"
@@ -131,7 +131,7 @@ la fermeture sécurisée des fichiers
 la préservation de l’intégrité du classeur et des sources
 un fail-safe shutdown conforme aux standards de production VBA/BFI
 
-<strong>8) Structure des KPIs</strong>
+<strong>&nbsp;&nbsp;8. Structure des KPIs</strong>
 
 Un fichier JSON est généré à la fin du traitement avec des indicateurs clefs sur le process réalisé :
 <br>
