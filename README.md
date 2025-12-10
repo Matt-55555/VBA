@@ -72,13 +72,7 @@ Le module "InitialisationGlobales" est ensuite appelé : il récupère l’ensem
 <strong>&nbsp;&nbsp;2. Création du rapport et vérification de l’environnement</strong>
 
 Le module "CreateRapport" supprime puis recrée le fichier "Rapport.txt", garantissant un espace de log propre pour la session d’exécution courante.
-Le module "VérificationsPréalables" réalise ensuite un pipeline complet de validation de l’environnement. Il contrôle :
-l’existence des fichiers essentiels ("Masterfile.xlsm", "GO.txt", "Rapport.txt")
-la présence des onglets requis
-la disponibilité des tableaux structurés attendus
-la cohérence des plages nommées
-la validité des répertoires spécifiés dans les paramètres
-la présence des fichiers obligatoires dans chaque dossier source
+Le module "VérificationsPréalables" réalise ensuite un pipeline complet de validation de l’environnement. Il contrôle l’existence des fichiers essentiels ("Masterfile.xlsm", "GO.txt", "Rapport.txt"), la présence des onglets requis, la disponibilité des tableaux structurés attendus, la cohérence des plages nommées, la validité des répertoires spécifiés dans les paramètres, la présence des fichiers obligatoires dans chaque dossier source, la présence de certaines colonnes dans les ListObjects, etc.
 
 L’ensemble repose sur une série de sous-modules spécialisés ("VérifFichiers", "VérifOnglets", "VérifTableauxStructurés", "VérifPlagesNommées", "VérifExistenceFichiers", "VérifExistenceRépertoires") articulés de façon à garantir un enchaînement fiable et logique des opérations de vérification. En cas d’erreur, les anomalies sont consolidées dans le rapport et entraînent une interruption contrôlée du processus.
 
