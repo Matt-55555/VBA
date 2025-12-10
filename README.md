@@ -41,7 +41,7 @@ Génération de l’État des Écarts Intragroupes</h1>
 2.	Mode manuel<br>
 - 	Lancement par clic sur bouton Excel<br>
 - 	Si erreur dans le traitement, une MsgBox apparaît et informe l'utilisateur sur le type d'erreur rencontré et sur la démarche à suivre<br>
-- 	En fin de programme, une MsgBox informe l'utilisateur de la fin du traitement<br>
+- 	En fin de programme une MsgBox informe l'utilisateur de la fin du traitement<br>
 <br>
 <br>
 <strong>A)	Contexte et objectif</strong>
