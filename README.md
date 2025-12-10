@@ -65,7 +65,7 @@ Le programme VBA s’appuie sur une architecture modulaire segmentée, organisé
 <strong>&nbsp;&nbsp;1. Initialisation et préparation du contexte</strong>
 <br>
 <br>
-À l’exécution, le processus est lancé par la procédure "Main" située dans le module "PROCESS_MAIN", qui initialise le contexte applicatif via l'appel de la procédure "Init", active le mode de gestion des erreurs centralisé et journalise l’amorçage du workflow dans le système de logging interne (ALGOLOG). Cette phase prépare les variables globales, configure le mode automatique éventuel (CMD/RPA) et établit la séquence d’appel des modules métier.
+À l’exécution, le processus est lancé par la procédure "Main" située dans le module "PROCESS_MAIN", qui initialise le contexte applicatif via l'appel de la procédure "Init", active le mode de gestion des erreurs centralisé et journalise l’amorçage du workflow dans le système de logging interne ("ALGOLOG"). Cette phase prépare les variables globales, configure le mode automatique éventuel (CMD/RPA) et établit la séquence d’appel des modules métier.
 
 Le module "InitialisationGlobales" est ensuite appelé : il récupère l’ensemble des paramètres dynamiques nécessaires au traitement (chemins des fichiers sources, onglets requis, tableaux structurés obligatoires, plages nommées, répertoires d’entrée et de sortie, métadonnées KPI, etc.). Cette étape construit le contexte d'exécution du programme et initialise les compteurs opérationnels ainsi que la configuration KPI via "KPI_CONFIG".
 
