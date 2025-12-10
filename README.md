@@ -15,7 +15,6 @@ Ce développement illustre ma capacité à :
 •	produire un code fiable, maintenable, et conforme aux standards industriels  
 •	intégrer mon code dans un framework de développement entreprise existant  
 <br>
-<br>
 <h1>Développement VBA<br>
 Génération de l’État des Écarts Intragroupes</h1>
 <br>
