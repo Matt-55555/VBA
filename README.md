@@ -41,16 +41,12 @@ Génération de l’État des Écarts Intragroupes</h1>
 - 	En fin de programme une MsgBox informe l'utilisateur de la fin du traitement.<br>
 <br>
 <br>
-<strong>A)	Contexte et objectif</strong>
-<br>
+<strong>A)	Contexte et objectif</strong><br>
 <br>
 Ce développement VBA/Excel vise à automatiser la génération de fichiers d’écarts intragroupes (environ 280 classeurs en output) pour le département DFI / GTVA à partir de données issues du process GTVA.  
-Le traitement, historiquement manuel et chronophage, a été entièrement automatisé pour être exécuté en autonomie par un robot RPA sur une VDI.
+Le traitement, historiquement manuel et chronophage, a été entièrement automatisé pour être exécuté en autonomie par un robot RPA sur une VDI.<br>
 <br>
-<br>
-<br>
-<strong>B)	Architecture du process</strong>
-<br>
+<strong>B)	Architecture du process</strong><br>
 <br>
 Le programme VBA s’appuie sur une architecture modulaire segmentée, organisée autour d’un point d’entrée unique (procédure "Main" dans le module "PROCESS_MAIN" du Classeur "361 - v1.2.2 - 2024-11-20.xlsm") qui pilote l’ensemble du workflow et coordonne les différentes étapes du traitement.<br>
 <br>
@@ -58,12 +54,9 @@ Le code s’intègre dans un framework VBA interne fournissant des fonctionnalit
 <br>
 Chaque responsabilité fonctionnelle est définie dans un module dédié : initialisation du contexte, des KPIs, et des variables globales ("InitialisationGlobales"), création et remise à zéro du fichier de rapport ("CreateRapport"), vérification de la complétude et de la cohérence des sources ("VérificationsPréalables"), génération du répertoire d’exécution journalier ("CréationDossierJour"), configuration des entités à traiter ("ParamétrageEntités"), puis exécution du traitement métier pilotée par une boucle intégrant les rafraîchissements PowerQuery avec une gestion asynchrone des requêtes permettant de coordonner l’avancement du workflow VBA avec la finalisation effective des chargements de données, nettoyages intermédiaires et exports finalisés ("Export").<br>
 <br>
-Enfin, les modules de clôture ("End_Clean" et "End_Clean_OnError") garantissent une terminaison propre du processus, la mise à jour des KPIs ainsi que la production du statut final ("OK" ou "KO"). Cette organisation modulaire assure une séparation nette des responsabilités, une meilleure maintenabilité, et une fiabilité conforme aux exigences d’un environnement VBA professionnel.
+Enfin, les modules de clôture ("End_Clean" et "End_Clean_OnError") garantissent une terminaison propre du processus, la mise à jour des KPIs ainsi que la production du statut final ("OK" ou "KO"). Cette organisation modulaire assure une séparation nette des responsabilités, une meilleure maintenabilité, et une fiabilité conforme aux exigences d’un environnement VBA professionnel.<br>
 <br>
-<br>
-<br>
-<strong>C)	Worflow d'exécution du programme</strong>
-<br>
+<strong>C)	Worflow d'exécution du programme</strong><br>
 <br>
 <strong>&nbsp;&nbsp;&nbsp;&nbsp;1. Initialisation et préparation du contexte</strong>
 <br>
