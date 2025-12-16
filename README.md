@@ -71,38 +71,38 @@ Enfin, les modules de clôture ("End_Clean" et "End_Clean_OnError") garantissent
 <strong>&nbsp;&nbsp;1. Initialisation et préparation du contexte</strong>
 <br>
 <br>
-À l’exécution, le processus est lancé par la procédure "Main" située dans le module "PROCESS_MAIN", qui initialise le contexte applicatif via l'appel de la procédure "Init", active le mode de gestion des erreurs centralisé et journalise l’amorçage du workflow dans le système de logging interne ("ALGOLOG"). Cette phase prépare les variables globales, configure le mode automatique éventuel (CMD/RPA) et établit la séquence d’appel des modules métier.
-
-Le module "InitialisationGlobales" est ensuite appelé : il récupère l’ensemble des paramètres dynamiques nécessaires au traitement (chemins des fichiers sources, onglets requis, tableaux structurés obligatoires, plages nommées, répertoires d’entrée et de sortie, métadonnées KPI, etc.). Cette étape construit le contexte d'exécution du programme et initialise les compteurs opérationnels ainsi que la configuration KPI via "KPI_CONFIG".
-
-<strong>&nbsp;&nbsp;2. Création du rapport et vérification de l’environnement</strong>
-
+À l’exécution, le processus est lancé par la procédure "Main" située dans le module "PROCESS_MAIN", qui initialise le contexte applicatif via l'appel de la procédure "Init", active le mode de gestion des erreurs centralisé et journalise l’amorçage du workflow dans le système de logging interne ("ALGOLOG"). Cette phase prépare les variables globales, configure le mode automatique éventuel (CMD/RPA) et établit la séquence d’appel des modules métier.<br>
+<br>
+Le module "InitialisationGlobales" est ensuite appelé : il récupère l’ensemble des paramètres dynamiques nécessaires au traitement (chemins des fichiers sources, onglets requis, tableaux structurés obligatoires, plages nommées, répertoires d’entrée et de sortie, métadonnées KPI, etc.). Cette étape construit le contexte d'exécution du programme et initialise les compteurs opérationnels ainsi que la configuration KPI via "KPI_CONFIG".<br>
+<br>
+<strong>&nbsp;&nbsp;2. Création du rapport et vérification de l’environnement</strong><br>
+<br>
 Le module "CreateRapport" supprime puis recrée le fichier "Rapport.txt", garantissant un espace de log propre pour la session d’exécution courante.
 Le module "VérificationsPréalables" réalise ensuite un pipeline complet de validation de l’environnement. Il contrôle l’existence des fichiers essentiels ("Masterfile.xlsm", "GO.txt", "Rapport.txt"), la présence des onglets requis, la disponibilité des tableaux structurés attendus, la cohérence des plages nommées, la validité des répertoires spécifiés dans les paramètres, la présence des fichiers obligatoires dans chaque dossier source, la présence de certaines colonnes dans les ListObjects, etc.
-L’ensemble repose sur une série de sous-modules spécialisés ("VérifFichiers", "VérifOnglets", "VérifTableauxStructurés", "VérifPlagesNommées", "VérifExistenceFichiers", "VérifExistenceRépertoires") articulés de façon à garantir un enchaînement fiable et logique des opérations de vérification. En cas d’erreur, les anomalies sont consolidées dans le rapport et entraînent une interruption contrôlée du processus.
-
-<strong>&nbsp;&nbsp;3. Génération du répertoire journalier</strong>
-
-Une fois l’environnement validé, le module "CréationDossierJour" génère le répertoire d’exécution du jour à partir d’un chemin modèle contenant des jetons dynamiques (AA/MM/JJ). Le système substitue ces jetons par la date courante, normalise le chemin final, puis crée le dossier s’il n’existe pas. Ce répertoire deviendra l’emplacement de sortie de l’ensemble des fichiers générés.
-
-<strong>&nbsp;&nbsp;4. Préparation des entités à traiter</strong>
-
+L’ensemble repose sur une série de sous-modules spécialisés ("VérifFichiers", "VérifOnglets", "VérifTableauxStructurés", "VérifPlagesNommées", "VérifExistenceFichiers", "VérifExistenceRépertoires") articulés de façon à garantir un enchaînement fiable et logique des opérations de vérification. En cas d’erreur, les anomalies sont consolidées dans le rapport et entraînent une interruption contrôlée du processus.<br>
+<br>
+<strong>&nbsp;&nbsp;3. Génération du répertoire journalier</strong><br>
+<br>
+Une fois l’environnement validé, le module "CréationDossierJour" génère le répertoire d’exécution du jour à partir d’un chemin modèle contenant des jetons dynamiques (AA/MM/JJ). Le système substitue ces jetons par la date courante, normalise le chemin final, puis crée le dossier s’il n’existe pas. Ce répertoire deviendra l’emplacement de sortie de l’ensemble des fichiers générés.<br>
+<br>
+<strong>&nbsp;&nbsp;4. Préparation des entités à traiter</strong><br>
+<br>
 Le module "ParamétrageEntités" prépare le périmètre de traitement en marquant par un « X » l’ensemble des lignes du tableau structuré "Déclarants_IG".
-L’opération n’altère pas la structure du tableau, mais prépare une liste de travail parfaitement déterministe pour le module d’export.
-
-<strong>&nbsp;&nbsp;5. Phase d’export métier</strong>
-
+L’opération n’altère pas la structure du tableau, mais prépare une liste de travail parfaitement déterministe pour le module d’export.<br>
+<br>
+<strong>&nbsp;&nbsp;5. Phase d’export métier</strong><br>
+<br>
 Le module "Export" constitue le cœur opérationnel du processus. Il commence par déterminer le nombre d’entités à traiter, à alimenter les KPIs correspondants, puis à masquer les feuilles non essentielles pour sécuriser l’environnement d’exécution.
 <br>
-Pour chaque entité marquée, la feuille "Entité" est renseignée avec les paramètres correspondants, les 6 connexions PowerQuery critiques ("Membre", "Imports", "Final", "Réponses", "Rejets", "Clé_de_lettrage") sont rafraîchies séquentiellement avec un processus asynchrone, les données intermédiaires du tableau "Imports" sont supprimées, les colonnes calculées problématiques ("Assistant_Lettrage" et "Statut_Final") sont reconstruites pour garantir la cohérence métier, l’ensemble des caches pivots du classeur est régénéré, le fichier final est produit dans le répertoire journalier en incluant le nom de l’entité dans son intitulé. Chaque rafraîchissement PowerQuery est chronométré et sécurisé : en cas d’erreur sur une connexion un module dédié ("End_Clean_OnError_Connection") interrompt immédiatement le processus et journalise l’anomalie.
-
-<strong>&nbsp;&nbsp;6. Clôture contrôlée</strong>
-
+Pour chaque entité marquée, la feuille "Entité" est renseignée avec les paramètres correspondants, les 6 connexions PowerQuery critiques ("Membre", "Imports", "Final", "Réponses", "Rejets", "Clé_de_lettrage") sont rafraîchies séquentiellement avec un processus asynchrone, les données intermédiaires du tableau "Imports" sont supprimées, les colonnes calculées problématiques ("Assistant_Lettrage" et "Statut_Final") sont reconstruites pour garantir la cohérence métier, l’ensemble des caches pivots du classeur est régénéré, le fichier final est produit dans le répertoire journalier en incluant le nom de l’entité dans son intitulé. Chaque rafraîchissement PowerQuery est chronométré et sécurisé : en cas d’erreur sur une connexion un module dédié ("End_Clean_OnError_Connection") interrompt immédiatement le processus et journalise l’anomalie.<br>
+<br>
+<strong>&nbsp;&nbsp;6. Clôture contrôlée</strong><br>
+<br>
 À l’issue de la boucle :
-La procédure "End_Clean" consolide et transmet les KPIs, sauvegarde le classeur maître, met à jour le fichier "Rapport.txt", écrit le statut final "OK" dans le fichier d'état "GO.txt" faisant le lien entre le process VBA et l'automatisation RPA, journalise la durée totale du traitement, ferme proprement l’application Excel et le fichier source. Cette phase garantit une clôture propre de l’ensemble du processus.
-
-<strong>&nbsp;&nbsp;7. Gestion d’erreurs et arrêt sécurisé</strong>
-
+La procédure "End_Clean" consolide et transmet les KPIs, sauvegarde le classeur maître, met à jour le fichier "Rapport.txt", écrit le statut final "OK" dans le fichier d'état "GO.txt" faisant le lien entre le process VBA et l'automatisation RPA, journalise la durée totale du traitement, ferme proprement l’application Excel et le fichier source. Cette phase garantit une clôture propre de l’ensemble du processus.<br>
+<br>
+<strong>&nbsp;&nbsp;7. Gestion d’erreurs et arrêt sécurisé</strong><br>
+<br>
 En cas d’exception (anomalie métier, erreur PowerQuery, chemin manquant, structure non conforme…), les modules :
 "End_Clean_OnError",
 "End_Clean_OnError_Connection",
@@ -111,10 +111,10 @@ la mise à jour du statut final en "KO",
 la journalisation complète de l’erreur,
 la fermeture sécurisée des fichiers,
 la préservation de l’intégrité du classeur et des sources,
-une fermeture propre du traitement.
-
-<strong>&nbsp;&nbsp;8. Structure des KPIs</strong>
-
+une fermeture propre du traitement.<br>
+<br>
+<strong>&nbsp;&nbsp;8. Structure des KPIs</strong><br>
+<br>
 Un fichier JSON est généré à la fin du traitement avec des indicateurs clefs sur le process réalisé :
 <br>
 | Clé | Exemple | Description |<br>
