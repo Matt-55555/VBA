@@ -6,35 +6,32 @@ Année 2024
 ________________________________________
 <strong>Licence</strong>  
 Projet interne CACIB Fast-IT / DFI - Reproduction interdite.  
-Le code présenté sur GitHub a pour but de donner un aperçu de mes pratiques et compétences techniques. 
+Le code présenté sur GitHub a pour but de donner un aperçu de mes pratiques et compétences techniques.
 ________________________________________
 <strong>Notes</strong>  
 Ce développement illustre ma capacité à :  
 •	concevoir des automatisations Excel robustes et compatibles RPA,  
 •	intégrer des logs détaillés, des KPIs de fin de traitement, et des gestions d’erreurs structurées et différenciées,  
 •	produire un code fiable, maintenable, et conforme aux standards industriels,  
-•	intégrer mon code dans un framework de développement entreprise existant.  
+•	intégrer mon code dans un framework de développement entreprise existant.
+________________________________________
 <br>
 <h1>Développement VBA<br>
 Génération de l’État des Écarts Intragroupes</h1>
 <br>
-<strong>*** Technologies et normes utilisées</strong>  
-<br>
+<strong>*** Technologies et normes utilisées</strong><br>
 - 	Excel VBA (compatible Office 32 bits et 64 bits),<br>
 - 	Requêtes PowerQuery,<br>
 - 	Intégration RPA via CMD + fichiers d’état,<br>
 - 	Logging textuel en temps réel,<br>
 - 	export de données en JSON (KPI),<br>
-- 	Gestion différenciée des erreurs en fonction du mode de lancement.
+- 	Gestion différenciée des erreurs en fonction du mode de lancement.<br>
 <br>
-<br>
-<strong>*** Fichiers utilisés</strong>
-<br>
+<strong>*** Fichiers utilisés</strong><br>
 - 	Classeur Excel "361 - v1.2.2.xlsm" : application contenant le programme VBA,<br>
 - 	Classeur "Masterfile - IG v10.8.xlsx" : fichier en input.<br>
 <br>
-<strong>*** Modes de lancement et spécificités</strong>
-<br>
+<strong>*** Modes de lancement et spécificités</strong><br>
 1.	Mode RPA (automatique)<br>
 - 	Lancement via "cmd.bat",<br>
 -   Gestion des erreurs silencieuse et fermeture propre de l'application en fin de programme (notamment en cas de bug car le programme tourne sur une VDI et aucune personne physique ne peut interagir avec l'application).<br>
@@ -93,9 +90,11 @@ L’opération n’altère pas la structure du tableau, mais prépare une liste 
 <br>
 <strong>&nbsp;&nbsp;5. Phase d’export métier</strong><br>
 <br>
-Le module "Export" constitue le cœur opérationnel du processus. Il commence par déterminer le nombre d’entités à traiter, à alimenter les KPIs correspondants, puis à masquer les feuilles non essentielles pour sécuriser l’environnement d’exécution.
+Le module "Export" constitue le cœur opérationnel du processus. Il commence par déterminer le nombre d’entités à traiter, à alimenter les KPIs correspondants, puis à masquer les feuilles non essentielles pour sécuriser l’environnement d’exécution.<br>
 <br>
-Pour chaque entité marquée, la feuille "Entité" est renseignée avec les paramètres correspondants, les 6 connexions PowerQuery critiques ("Membre", "Imports", "Final", "Réponses", "Rejets", "Clé_de_lettrage") sont rafraîchies séquentiellement avec un processus asynchrone, les données intermédiaires du tableau "Imports" sont supprimées, les colonnes calculées problématiques ("Assistant_Lettrage" et "Statut_Final") sont reconstruites pour garantir la cohérence métier, l’ensemble des caches pivots du classeur est régénéré, le fichier final est produit dans le répertoire journalier en incluant le nom de l’entité dans son intitulé. Chaque rafraîchissement PowerQuery est chronométré et sécurisé : en cas d’erreur sur une connexion un module dédié ("End_Clean_OnError_Connection") interrompt immédiatement le processus et journalise l’anomalie.<br>
+Pour chaque entité marquée, la feuille "Entité" est renseignée avec les paramètres correspondants, les 6 connexions PowerQuery critiques ("Membre", "Imports", "Final", "Réponses", "Rejets", "Clé_de_lettrage") sont rafraîchies séquentiellement avec un processus asynchrone, les données intermédiaires du tableau "Imports" sont supprimées, les colonnes calculées problématiques ("Assistant_Lettrage" et "Statut_Final") sont reconstruites pour garantir la cohérence métier, l’ensemble des caches pivots du classeur est régénéré, le fichier final est produit dans le répertoire journalier en incluant le nom de l’entité dans son intitulé.<br>
+<br>
+Chaque rafraîchissement PowerQuery est chronométré et sécurisé. En cas d’erreur sur une connexion, un module dédié ("End_Clean_OnError_Connection") interrompt le processus et journalise l’anomalie.<br>
 <br>
 <strong>&nbsp;&nbsp;6. Clôture contrôlée</strong><br>
 <br>
