@@ -5,43 +5,43 @@ CACIB Direction Financière - DFI / GTVA
 Année 2024  
 ________________________________________
 <strong>Licence</strong>  
-Projet interne CACIB Fast-IT / DFI - Reproduction interdite  
-Le code présenté sur GitHub a uniquement pour objectif de mettre en valeur mes compétences techniques  
+Projet interne CACIB Fast-IT / DFI - Reproduction interdite.  
+Le code présenté sur GitHub a pour but de donner un aperçu de mes pratiques et compétences techniques. 
 ________________________________________
 <strong>Notes</strong>  
 Ce développement illustre ma capacité à :  
-•	concevoir des automatisations Excel robustes et compatibles RPA  
-•	intégrer des logs détaillés, des KPIs de fin de traitement, et des gestions d’erreurs structurées et différenciées  
-•	produire un code fiable, maintenable, et conforme aux standards industriels  
-•	intégrer mon code dans un framework de développement entreprise existant  
+•	concevoir des automatisations Excel robustes et compatibles RPA,  
+•	intégrer des logs détaillés, des KPIs de fin de traitement, et des gestions d’erreurs structurées et différenciées,  
+•	produire un code fiable, maintenable, et conforme aux standards industriels,  
+•	intégrer mon code dans un framework de développement entreprise existant.  
 <br>
 <h1>Développement VBA<br>
 Génération de l’État des Écarts Intragroupes</h1>
 <br>
 <strong>*** Technologies et normes utilisées</strong>  
 <br>
-- 	Excel VBA (compatible Office 32 bits et 64 bits)<br>
-- 	Requêtes PowerQuery<br>
-- 	Intégration RPA via CMD + fichiers d’état<br>
-- 	Logging textuel en temps réel<br>
-- 	export de données en JSON (KPI)<br>
-- 	Gestion différenciée des erreurs en fonction du mode de lancement
+- 	Excel VBA (compatible Office 32 bits et 64 bits),<br>
+- 	Requêtes PowerQuery,<br>
+- 	Intégration RPA via CMD + fichiers d’état,<br>
+- 	Logging textuel en temps réel,<br>
+- 	export de données en JSON (KPI),<br>
+- 	Gestion différenciée des erreurs en fonction du mode de lancement.
 <br>
 <br>
 <strong>*** Fichiers utilisés</strong>
 <br>
-- 	Classeur Excel "361 - v1.2.2.xlsm" : application contenant le programme VBA<br>
-- 	Classeur "Masterfile - IG v10.8.xlsx" : fichier en input<br>
+- 	Classeur Excel "361 - v1.2.2.xlsm" : application contenant le programme VBA,<br>
+- 	Classeur "Masterfile - IG v10.8.xlsx" : fichier en input.<br>
 <br>
 <strong>*** Modes de lancement et spécificités</strong>
 <br>
 1.	Mode RPA (automatique)<br>
-- 	Lancement via "cmd.bat"<br>
--   Gestion des erreurs silencieuse et fermeture propre de l'application en fin de programme (notamment en cas de bug car le programme tourne sur une VDI et aucune personne physique ne peut interagir avec l'application)<br>
+- 	Lancement via "cmd.bat",<br>
+-   Gestion des erreurs silencieuse et fermeture propre de l'application en fin de programme (notamment en cas de bug car le programme tourne sur une VDI et aucune personne physique ne peut interagir avec l'application).<br>
 2.	Mode manuel<br>
-- 	Lancement par clic sur bouton Excel<br>
-- 	Si erreur dans le traitement, une MsgBox apparaît et informe l'utilisateur sur le type d'erreur rencontré et sur la démarche à suivre<br>
-- 	En fin de programme une MsgBox informe l'utilisateur de la fin du traitement<br>
+- 	Lancement par clic sur bouton Excel,<br>
+- 	Si erreur dans le traitement, une MsgBox apparaît et informe l'utilisateur sur le type d'erreur rencontré et sur la démarche à suivre,<br>
+- 	En fin de programme une MsgBox informe l'utilisateur de la fin du traitement.<br>
 <br>
 <br>
 <strong>A)	Contexte et objectif</strong>
@@ -98,14 +98,14 @@ La procédure "End_Clean" consolide et transmet les KPIs, sauvegarde le classeur
 <strong>&nbsp;&nbsp;7. Gestion d’erreurs et arrêt sécurisé</strong>
 
 En cas d’exception (anomalie métier, erreur PowerQuery, chemin manquant, structure non conforme…), les modules :
-"End_Clean_OnError"
-"End_Clean_OnError_Connection"
+"End_Clean_OnError",
+"End_Clean_OnError_Connection",
 prennent automatiquement le relais. Ils assurent :
-la mise à jour du statut final en "KO"
-la journalisation complète de l’erreur
-la fermeture sécurisée des fichiers
-la préservation de l’intégrité du classeur et des sources
-un fail-safe shutdown conforme aux standards de production VBA/BFI
+la mise à jour du statut final en "KO",
+la journalisation complète de l’erreur,
+la fermeture sécurisée des fichiers,
+la préservation de l’intégrité du classeur et des sources,
+une fermeture propre du traitement.
 
 <strong>&nbsp;&nbsp;8. Structure des KPIs</strong>
 
